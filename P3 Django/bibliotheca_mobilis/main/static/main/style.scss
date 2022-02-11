@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+
+}
+
+body {
+    font-family: "IBM Plex Mono", monospace;
+    height: 100%;
+    background-color: rgb(32, 32, 32);
+}
+
+.test{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.title {
+    color: rgb(255, 166, 0);
+    font-weight: normal;
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgb(245, 3, 3);
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+
+.connection {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style-type: none;
+    margin-right: 1rem;
+}
+
+.userConnection {
+    color: rgb(255, 166, 0);
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.userConnection:hover {
+    transition: color 300ms;
+    color: rgba(0, 171, 250, 0.513);
+}
+
+.container {
+    background: url("./Cruser.jpg");
+    background-position: top 30% right 0%;
+    background-size: cover;
+    z-index: 0;
+}
+
+.container2 {
+    background: url("./Font-Space.png");
+    background-size: cover;
+    z-index: 0;
+    margin : 0;
+    // flex-grow: 1;
+    height: 100%;
+}
+
+.background {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+.topPictures {
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+// .space {
+//     margin : 0;
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     flex-grow: 1;
+//     justify-content: space-between;
+//     position: relative;
+// }
+
+
+.primaryNavigation{
+    color: rgb(255, 166, 0);
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+}
+
+.advanceNavigationLibrary {
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    display: block;
+    border-radius: 0px;
+    width: 50%;
+    display: none;
+}
+
+.secondaryNavigationLibrary{
+    
+    color: rgb(255, 166, 0);
+    background-color: black;
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.button1{
+    flex-direction: column;
+    width: 100%;
+
+    &:hover>.advanceNavigationLibrary {
+        display: flex;
+        position: absolute; 
+        background-color: black;  
+    }
+}
+
+.secondaryNavigationComu{
+    color: rgb(255, 166, 0);
+    background-color: black;
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button2 {
+    flex-direction: column;
+    width: 100%;
+    &:hover>.advanceNavigationComu {
+        display: flex;
+        position: absolute; 
+        background-color: black;  
+    }
+}
+
+
+.advanceButton{
+    background-color: black;
+    border-radius: 0px;
+    border-color: black;
+    padding: .5rem 0 .5rem 0;
+}
+
+
+.baseNavigation {
+    background-color: rgb(0, 0, 0);
+    display: block;
+    padding: 0.5em 0em 0.5em 0em;
+    border-radius: 0px;
+    width: 100%;
+}
+
+.advanceNavigationComu {
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    display: block;
+    border-radius: 0px;
+    width: 50%;
+    display: none;
+}
+
+
+.text{
+    display:flex;
+    justify-content: center;
+    margin: 5rem 20% 0 20%;
+    
+}
+
+.introduction {
+    // flex-direction: column;
+    
+    margin-bottom: 2rem;
+    color: white;
+    text-align: justify;
+}
+
+.beginning{
+    color : rgb(255, 166, 0);
+    text-shadow: 0 0 50px rgb(245, 3, 3);
+}
