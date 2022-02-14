@@ -50,7 +50,6 @@ body {
 }
 
 .userConnection {
-  background-color: rgba(0, 0, 0, 0.25);
   color: #ffa600;
   padding-right: 0.5rem;
   font-size: 1rem;
@@ -60,7 +59,7 @@ body {
 .userConnection:hover {
   -webkit-transition: color 300ms;
   transition: color 300ms;
-  color: rgba(0, 171, 250, 0.513);
+  color: white;
 }
 
 .container {
@@ -90,6 +89,8 @@ body {
 }
 
 .topPictures {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(184, 184, 184, 0.3)), color-stop(50%), to(rgba(49, 49, 49, 0.5)));
+  background: linear-gradient(0.25turn, rgba(184, 184, 184, 0.3), 50%, rgba(49, 49, 49, 0.5));
   height: 40vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -230,6 +231,9 @@ body {
 
 .beginning {
   color: #ffa600;
-  text-shadow: 0 0 50px #f50303;
+}
+
+.beginning:hover {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
