@@ -50,6 +50,7 @@ body {
 }
 
 .userConnection {
+  background-color: rgba(0, 0, 0, 0.25);
   color: #ffa600;
   padding-right: 0.5rem;
   font-size: 1rem;
