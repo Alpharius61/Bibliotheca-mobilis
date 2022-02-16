@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main import views
+from registration import views as r_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('signup/', r_views.signup, name='signup')
 ]
