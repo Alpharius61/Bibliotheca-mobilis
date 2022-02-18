@@ -238,8 +238,7 @@ body {
 }
 
 .signUpFormClass {
-  color: black;
-  background-color: rgba(248, 191, 98, 0.575);
+  background-color: rgba(255, 166, 0, 0.575);
 }
 
 .red {
@@ -252,16 +251,10 @@ body {
 }
 
 button[type="submit"] {
-  padding: 1rem;
-  background-color: #ffa600;
+  padding: 0.5rem;
+  background-color: rgba(255, 166, 0, 0.575);
   border: none;
   color: white;
   border-radius: 12px;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-button[type="submit"]:hover {
-  background-color: rgba(255, 166, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
