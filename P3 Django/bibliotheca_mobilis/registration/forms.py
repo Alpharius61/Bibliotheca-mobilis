@@ -1,10 +1,27 @@
 from django import forms
-from registration.models import signUp
+from django.contrib.auth.models import User
+from registration.models import UserOrigine
+from django.contrib.auth.forms import UserCreationForm
 
-class signUpForm(forms.ModelForm):
+
+class signUpForm(UserCreationForm):
+    origine = forms.ModelChoiceField(
+        queryset=UserOrigine.objects.all(),
+        widget=forms.Select(attrs={
+            'class': 'form__control ',
+        }),
+        required=True
+    )
+
     class Meta:
-        model = signUp
-        fields = ['pseudo','email','origine']
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        labels = {
+            'username': 'Pseudo ',
+            'email': 'Email ',
+            'password1' : 'Mot de passe',
+            'password2' : 'Confirmation de mot de passe',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -254,15 +254,14 @@ body {
 button[type="submit"] {
   padding: 1rem;
   background-color: #ffa600;
-  border-color: #ffa600;
+  border: none;
   color: white;
-  border-radius: 0px;
+  border-radius: 12px;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 button[type="submit"]:hover {
-  background-color: #ffa600;
-  color: white;
+  background-color: rgba(255, 166, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */

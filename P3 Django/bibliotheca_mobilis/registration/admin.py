@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from registration.models import signUp
+from registration.models import UserOrigine
 
 # Register your models here.
-admin.site.register(signUp)
+admin.site.register(UserOrigine)

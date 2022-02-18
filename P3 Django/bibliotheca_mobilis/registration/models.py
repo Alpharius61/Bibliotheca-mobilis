@@ -1,20 +1,19 @@
-import email
-from random import choices
 from django.db import models
-from django.forms import PasswordInput
+from django.contrib.auth.models import User
+
 
 # Create your models here.
-class signUp(models.Model):
+# class signUp(models.Model):
 
-    class origine(models.TextChoices):
-        Chaos = 'Chaos'
-        Imperial ='Imperial'
-        Xeno ='Xeno'
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     origine = models.CharField(max_length=10, choices=origine.choices)
 
-    pseudo = models.CharField (max_length=50)
-    email = models.EmailField()
-    password = PasswordInput()
-    origine = models.TextField(choices=origine.choices)
+#     def __str__(self) -> str:
+#         return f'{self.origine}'
+
+
+class UserOrigine(models.Model):
+    name = models.CharField(max_length=10)
 
     def __str__(self) -> str:
-        return f'{self.name}'
+        return f"{self.name}"
