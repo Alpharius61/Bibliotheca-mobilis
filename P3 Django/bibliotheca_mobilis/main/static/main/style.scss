@@ -202,3 +202,33 @@ body {
     color :rgb(255, 255, 255)
   
 }
+
+.signUpFormClass{
+    color: black;
+    background-color: rgba(248, 191, 98, 0.575);
+}
+
+.red{
+    color : white;
+    display: block;
+}
+
+.form__control{
+    margin-bottom: 2rem;
+
+}
+
+button[type="submit"]{
+    padding: 1rem;
+    background-color: rgb(255, 166, 0);
+    border-color: rgb(255, 166, 0);
+    color: white;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    &:hover{
+        background-color: rgb(255, 166, 0);
+        color: white;
+    }
+
+}

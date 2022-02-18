@@ -236,4 +236,33 @@ body {
 .beginning:hover {
   color: white;
 }
+
+.signUpFormClass {
+  color: black;
+  background-color: rgba(248, 191, 98, 0.575);
+}
+
+.red {
+  color: white;
+  display: block;
+}
+
+.form__control {
+  margin-bottom: 2rem;
+}
+
+button[type="submit"] {
+  padding: 1rem;
+  background-color: #ffa600;
+  border-color: #ffa600;
+  color: white;
+  border-radius: 0px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffa600;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
