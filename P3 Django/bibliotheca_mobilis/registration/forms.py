@@ -19,8 +19,6 @@ class signUpForm(UserCreationForm):
         labels = {
             'username': 'Pseudo ',
             'email': 'Email ',
-            'password1' : 'Mot de passe',
-            'password2' : 'Confirmation de mot de passe',
         }
 
     def __init__(self, *args, **kwargs):
@@ -29,3 +27,6 @@ class signUpForm(UserCreationForm):
             self.fields[field].widget.attrs.update({
                 'class': 'signUpFormClass',
             })
+
+        self.fields['password1'].label = 'Mot de passe'
+        self.fields['password2'].label = 'Confirmation de mot de passe'
