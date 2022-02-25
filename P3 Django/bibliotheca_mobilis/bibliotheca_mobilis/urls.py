@@ -21,5 +21,5 @@ from registration import views as r_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('signup/', r_views.signup, name='signup')
+    path('accountCreation/', r_views.accountCreation, name='accountCreation')
 ]

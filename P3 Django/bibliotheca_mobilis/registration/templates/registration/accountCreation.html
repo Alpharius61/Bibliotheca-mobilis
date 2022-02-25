@@ -1,0 +1,23 @@
+{% extends 'main/_base.html' %}
+
+{% block title %}Inscription{% endblock title %}
+
+{% block Add %}
+<form action="" method='post' class='formular'>
+    {% csrf_token %}
+
+    {% comment %} {{form.as_p}} {% endcomment %}
+
+    {%for field in form%}
+    {% comment %} field.name = nom label (pseudo,email etc) {% endcomment %}
+    <div class="error">{{field.errors}}</div>
+    <div class="form__control">
+        <label for="{{field.name}}" class="accountClass">{{field.label}}</label>
+        {{field}}
+    </div>
+
+    {% endfor %}
+
+    <button type="submit">Envoyer</button>
+</form>
+{% endblock Add %}

@@ -237,11 +237,12 @@ body {
   color: white;
 }
 
-.signUpFormClass {
+.formClass {
   background-color: rgba(255, 166, 0, 0.575);
+  color: white;
 }
 
-.red {
+.accountClass {
   color: white;
   display: block;
 }
