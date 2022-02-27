@@ -1,17 +1,21 @@
+from email.policy import default
 from django import forms
 from django.contrib.auth.models import User
-from registration.models import UserOrigine
 from django.contrib.auth.forms import UserCreationForm
 
 
 class accountCreationForm(UserCreationForm):
-    origine = forms.ModelChoiceField(
-        queryset=UserOrigine.objects.all(),
-        widget=forms.Select(attrs={
-            'class': 'form__control ',
-        }),
-        required=True
-    )
+    
+    origin =  forms.ChoiceField( choices = [("",""),("Chaos","Chaos"),("Imperium","Imperium"),("Xenos","Xeno")], required=True)
+
+    # origin =  forms.ModelChoiceField(
+    #     
+    #     # queryset=userOrigin.objects.all(),
+    #     widget=forms.Select(attrs={
+    #         'class': 'form__control ',
+    #     }),
+    #     required=True
+    # )
 
     class Meta:
         model = User
@@ -30,6 +34,7 @@ class accountCreationForm(UserCreationForm):
 
         self.fields['password1'].label = 'Mot de passe'
         self.fields['password2'].label = 'Confirmation de mot de passe'
+
 
 
 class authentification():

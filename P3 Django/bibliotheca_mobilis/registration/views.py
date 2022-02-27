@@ -8,8 +8,11 @@ from registration.forms import accountCreationForm , authentification
 def accountCreation(request):
     form = accountCreationForm
     if request.method == 'POST':
-        print(request.POST)
-        return redirect('/')
+        form = accountCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        
     
     context = {
         'form': form
