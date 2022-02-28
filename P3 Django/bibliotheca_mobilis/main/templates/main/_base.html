@@ -24,75 +24,91 @@
                     <nav>
 
                         <ul class="connection">
+                            {% if user.is_authenticated%}
+                            <li>
+                                <a href class='userConnection'>{{user.username}}</a>
+                            </li>
+
+                            <li class='userConnection'>
+                                |
+                            </li>
+
+                            <li class='userConnection'>
+                                <a href={% url 'logout'%} class='userConnection'> Se déconnecter</a>
+                            </li>
+
+
+                            {% else %}
                             <li>
                                 <a href="{% url 'accountCreation' %}" class="userConnection">Créer un compte</a>
                             </li>
-                            <li class="userConnection">
-                                |
-                            </li>
+                            <li class="userConnection"> | </li>
                             <li>
-                                <a href="connection" class="userConnection">Se Connecter</a>
+                                <a href="{% url 'connection'%}" class="userConnection">Se Connecter</a>
                             </li>
+                            {% endif %}
+
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container2">
-            <div class="space">
-                <nav class="button">
-                    <div class="button1">
+    <div class="container2">
+        <div class="space">
+            <nav class="button">
+                <div class="button1">
 
-                        <button class="baseNavigation">
-                            <a href="library" class="primaryNavigation">Bibliothèque</a>
-                        </button>
-                        <div class="advanceNavigationLibrary">
-                            <button class="advanceButton">
-                                <a href="history" class="secondaryNavigationLibrary">Histoire</a>
-                            </button>
-
-                            <button class="advanceButton">
-                                <a href="armies" class="secondaryNavigationLibrary">Armées</a>
-                            </button>
-
-                            <button class="advanceButton">
-                                <a href="characters" class="secondaryNavigationLibrary">Personnages</a>
-                            </button>
-
-                        </div>
-                    </div>
-
-                    <div class="button2">
-                        <button class="baseNavigation">
-                            <a href="creation" class="primaryNavigation">Ajout de la communauté</a>
+                    <button class="baseNavigation">
+                        <a href="library" class="primaryNavigation">Bibliothèque</a>
+                    </button>
+                    <div class="advanceNavigationLibrary">
+                        <button class="advanceButton">
+                            <a href="history" class="secondaryNavigationLibrary">Histoire</a>
                         </button>
 
-                        <div class="advanceNavigationComu">
-                            <button class="advanceButton">
-                                <a href="creation" class="secondaryNavigationComu">Ajouter des savoirs</a>
-                            </button>
+                        <button class="advanceButton">
+                            <a href="armies" class="secondaryNavigationLibrary">Armées</a>
+                        </button>
 
-                            <button class="advanceButton">
-                                <a href="armiesCreated" class="secondaryNavigationComu">Armées de la communauté</a>
-                            </button>
+                        <button class="advanceButton">
+                            <a href="characters" class="secondaryNavigationLibrary">Personnages</a>
+                        </button>
 
-                            <button class="advanceButton">
-                                <a href="charactersCreated" class="secondaryNavigationComu">Personnages de la
-                                    communauté</a>
-
-                            </button>
-
-                        </div>
                     </div>
-                </nav>
-
-                <div class='text'>
-                    {% block Add %}{% endblock Add %}
                 </div>
 
+                <div class="button2">
+                    <button class="baseNavigation">
+                        <a href="creation" class="primaryNavigation">Ajout de la communauté</a>
+                    </button>
+
+                    <div class="advanceNavigationComu">
+                        <button class="advanceButton">
+                            <a href="creation" class="secondaryNavigationComu">Ajouter des savoirs</a>
+                        </button>
+
+                        <button class="advanceButton">
+                            <a href="armiesCreated" class="secondaryNavigationComu">Armées de la communauté</a>
+                        </button>
+
+                        <button class="advanceButton">
+                            <a href="charactersCreated" class="secondaryNavigationComu">Personnages de la
+                                communauté</a>
+
+                        </button>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class='text'>
+                {% block Add %}{% endblock Add %}
             </div>
+
         </div>
+    </div>
 
     </div>
 </body>

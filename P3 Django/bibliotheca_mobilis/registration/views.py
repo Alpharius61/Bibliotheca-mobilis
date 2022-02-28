@@ -3,7 +3,7 @@ import imp
 
 import logging
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from registration.forms import accountCreationForm , auth
 # Create your views here.
 
@@ -44,3 +44,7 @@ def connection(request):
             logger.debug ("form error=%s, form.non_field_errors=%s" % (form.errors, form.non_field_errors))
     context = {'form': form}
     return render(request, 'registration/connection.html', context)
+
+def logOut(request):
+    logout(request)
+    return redirect('/')
