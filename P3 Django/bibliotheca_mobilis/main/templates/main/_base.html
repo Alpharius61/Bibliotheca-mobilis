@@ -13,47 +13,45 @@
 
 <body>
     <!-- Containe the background pictures -->
-    <div class='test'>
-        <div class="container">
-            <!-- Creat a black filter between the picture and the screen to darkening the background-->
-            <div class="background">
-                <div class="topPictures">
-                    <h1 class="title">
-                        {% block title %}{% endblock title %}
-                    </h1>
-                    <nav>
 
-                        <ul class="connection">
-                            {% if user.is_authenticated%}
-                            <li>
-                                <a href class='userConnection'>{{user.username}}</a>
-                            </li>
-
-                            <li class='userConnection'>
-                                |
-                            </li>
-
-                            <li class='userConnection'>
-                                <a href={% url 'logout'%} class='userConnection'> Se déconnecter</a>
-                            </li>
+    <div class="container">
+        <!-- Creat a black filter between the picture and the screen to darkening the background-->
+        <div class="background">
+            <div class="topPictures">
+                <h1 class="title">
+                    {% block title %}{% endblock title %}
+                </h1>
+                <nav>
+                    <ul class="connection">
+                        {% if user.is_authenticated%}
+                        <li class='userConnection'>
+                            <a href={% url 'logout'%} class='userConnection'> Se déconnecter</a>
+                        </li>
 
 
-                            {% else %}
-                            <li>
-                                <a href="{% url 'accountCreation' %}" class="userConnection">Créer un compte</a>
-                            </li>
-                            <li class="userConnection"> | </li>
-                            <li>
-                                <a href="{% url 'connection'%}" class="userConnection">Se Connecter</a>
-                            </li>
-                            {% endif %}
+                        <li class='userConnection'>
+                            |
+                        </li>
 
-                        </ul>
-                    </nav>
-                </div>
+                        <li>
+                            <a href class='userConnection'>{{user.username}}</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'accountCreation' %}" class="userConnection">Créer un compte</a>
+                        </li>
+                        <li class="userConnection"> | </li>
+                        <li>
+                            <a href="{% url 'connection'%}" class="userConnection">Se Connecter</a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
+
 
     <div class="container2">
         <div class="space">
