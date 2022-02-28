@@ -1,21 +1,13 @@
 from email.policy import default
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+import logging
 
 
 class accountCreationForm(UserCreationForm):
     
     origin =  forms.ChoiceField( choices = [("",""),("Chaos","Chaos"),("Imperium","Imperium"),("Xenos","Xeno")], required=True)
-
-    # origin =  forms.ModelChoiceField(
-    #     
-    #     # queryset=userOrigin.objects.all(),
-    #     widget=forms.Select(attrs={
-    #         'class': 'form__control ',
-    #     }),
-    #     required=True
-    # )
 
     class Meta:
         model = User
@@ -37,11 +29,20 @@ class accountCreationForm(UserCreationForm):
 
 
 
-class authentification():
+class auth(AuthenticationForm):
+    
     class Meta:
         model = User
-        fields = ['email', 'password']
-        labels = {
-            'email': 'Email ',
-            'password': "Mot de passe",
-        }
+        fields = ['username', 'password']
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+       
+
+        for field in self.fields:
+            self.fields[field].widget.attrs.update({
+                'class': 'formClass',
+            })
+            
+        self.fields['username'].label = 'Pseudo'
+        self.fields['password'].label = 'Mot de passe'

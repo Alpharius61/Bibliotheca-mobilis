@@ -1,6 +1,6 @@
 {% extends 'main/_base.html' %}
 
-{% block title %}Inscription{% endblock title %}
+{% block title %}Connexion{% endblock title %}
 
 {% block Add %}
 <form action="" method='post' class='formular'>
@@ -12,12 +12,14 @@
     {% comment %} field.name = nom label (pseudo,email etc) {% endcomment %}
     <div class="error">{{field.errors}}</div>
     <div class="form__control">
-        <label for="{{field.name}}" class="accountFieldClass">{{field.label}}</label>
+        <label for="{{field.name}}" class="accountClass">{{field.label}}</label>
         {{field}}
     </div>
 
     {% endfor %}
 
     <button type="submit">Envoyer</button>
+    {{ form.errors }}
+    {{ form.non_field_errors }}
 </form>
 {% endblock Add %}
