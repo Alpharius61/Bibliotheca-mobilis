@@ -17,11 +17,7 @@ body {
     background-color: rgb(32, 32, 32);
 }
 
-.test{
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-}
+
 
 .title {
     color: rgb(255, 166, 0);
@@ -56,33 +52,19 @@ body {
     background: url("./Cruser.jpg");
     background-position: top 30% right 0%;
     background-size: cover;
-    z-index: 0;
 }
 
 .container2 {
     background: url("./Font-Space.png");
     background-size: cover;
-    z-index: 0;
-    margin : 0;
-    // flex-grow: 1;
     height: 100%;
 }
 
 .background {
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-    }
+    background: linear-gradient(.25turn, rgba(73, 73, 73, 0.438), 50%, rgba(29, 29, 29, 0.685));
 }
 
 .topPictures {
-    background: linear-gradient(.25turn, rgba(184, 184, 184, 0.3), 50%, rgba(49, 49, 49, 0.5));
     height: 40vh;
     display: flex;
     justify-content: space-between;
@@ -222,6 +204,5 @@ button[type="submit"]{
     background-color: rgba(255, 166, 0, 0.575);
     border: none;
     color: white;
-    border-radius: 12px;
-    
+    border-radius: 12px;   
 }
