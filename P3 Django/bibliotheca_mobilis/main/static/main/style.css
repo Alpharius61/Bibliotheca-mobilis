@@ -191,7 +191,7 @@ body {
   display: none;
 }
 
-.text {
+.textPosition {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,7 +201,7 @@ body {
   margin: 5rem 20% 0 20%;
 }
 
-.introduction {
+.text {
   margin-bottom: 2rem;
   color: white;
   text-align: justify;
@@ -229,7 +229,10 @@ body {
   margin-bottom: 2rem;
 }
 
-button[type="submit"] {
+.formButton {
+  font-family: "IBM Plex Mono", monospace;
+  text-decoration: none;
+  font-size: small;
   padding: 0.5rem;
   background-color: rgba(255, 166, 0, 0.575);
   border: none;

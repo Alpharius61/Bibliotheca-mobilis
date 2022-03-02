@@ -1,8 +1,13 @@
 {% extends 'main/_base.html' %}
 
-{% block title %}Inscription{% endblock title %}
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Nouveau Personnage{% endblock title %}
 
 {% block Add %}
+
+{% if user.is_authenticated%}
+
 <form action="" method='post' class='formular'>
     {% csrf_token %}
 
@@ -18,9 +23,14 @@
 
     {% endfor %}
 
-    <div>
-        <button class='formButton' type="submit">Envoyer</button>
-        <a class='formButton' href={% url 'index'%}> Retour</a>
-    </div>
+    <button type="submit">Envoyer</button>
+    {{ form.errors }}
+    {{ form.non_field_errors }}
 </form>
+
+{% else %}
+<p class='text'> Seule les perssonnes connéctées peuvent ajouter des connaissances.</p>
+
+{% endif %}
+
 {% endblock Add %}

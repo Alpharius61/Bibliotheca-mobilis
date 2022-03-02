@@ -43,6 +43,7 @@ class characterModel(models.Model):
     race = models.CharField(max_length=50, choices=creationRace.choices)
     chaosAspect = models.ForeignKey(chaosAspectVenerated, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    pictures = models.ImageField(null=True)
 
     
 
