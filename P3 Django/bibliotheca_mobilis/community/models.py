@@ -1,9 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
+from main.models import chaosAspectVenerated
+
 
 # Create your models here
 
 
-class characterCreation(models.Model):
+class characterModel(models.Model):
 
     class creationType(models.TextChoices):
         Personnel = 'Personnel'
@@ -32,15 +35,15 @@ class characterCreation(models.Model):
         Drukhari = 'Drukhari'
         Tau = 'Tau'
         
-    
-    
-
+   
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=200)
+    biography = models.TextField(max_length=200)
     type = models.CharField(max_length=50, choices=creationType.choices)
     side = models.CharField(max_length=50, choices=creationSide.choices)
     race = models.CharField(max_length=50, choices=creationRace.choices)
-    author = user.name
+    chaosAspect = models.ForeignKey(chaosAspectVenerated, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
     
 
     def __str__(self):

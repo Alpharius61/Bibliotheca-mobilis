@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main',
     'bibliotheca',
     'registration',
+    'community',
 ]
 
 MIDDLEWARE = [
