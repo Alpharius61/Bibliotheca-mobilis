@@ -1,0 +1,16 @@
+{% extends 'main/_base.html' %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Personnages de la communauté{% endblock title %}
+
+{% block Add %}
+
+{%for character in characters%}
+<div class="text">
+    <a href="{% url 'characterView' character.name %}">{{character.name}}</a>
+
+</div>
+
+
+{% endblock Add %}

@@ -21,9 +21,12 @@ from community import views as com_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = 'index'),
+    path('', views.index, name='index'),
     path('accountCreation/', r_views.accountCreation, name='accountCreation'),
     path('connection/', r_views.connection, name='connection'),
     path('logout/', r_views.logOut, name='logout'),
-    path('characterCreation/', com_views.characterCreationView, name='characterCreation'),
+    path('characterCreation/', com_views.characterCreationView,
+         name='characterCreation'),
+    path('character/<str:name>', com_views.characterView, name='characterView'),
+    path('charactersList/', com_views.charactersList, name='charactersList'),
 ]

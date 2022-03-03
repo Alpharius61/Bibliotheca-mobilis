@@ -8,7 +8,7 @@
 
 {% if user.is_authenticated%}
 
-<form action="" method='post' class='formular'>
+<form action="" method='post' class='formular' enctype="multipart/form-data">
     {% csrf_token %}
 
     {% comment %} {{form.as_p}} {% endcomment %}
@@ -23,13 +23,26 @@
 
     {% endfor %}
 
-    <button type="submit">Envoyer</button>
+    <div>
+        <button class='formButton' type="submit">Envoyer</button>
+        <a class='formButton' href={% url 'index'%}> Retour</a>
+    </div>
+
     {{ form.errors }}
     {{ form.non_field_errors }}
 </form>
 
 {% else %}
-<p class='text'> Seule les perssonnes connéctées peuvent ajouter des connaissances.</p>
+
+<div>
+    <p class='text'> Seule les perssonnes connéctées peuvent ajouter des connaissances.</p>
+
+    <div>
+        <a class='formButton' href={% url 'index'%}> Retour</a>
+        <a class='formButton' href={% url 'connection'%}> Se connecter</a>
+        <a class='formButton' href={% url 'accountCreation'%}> Créer un compte</a>
+    </div>
+</div>
 
 {% endif %}
 
