@@ -31,9 +31,32 @@ def characterView(request, name):
 
 
 def charactersList(request):
+    imperiumList =[]
+    chaosList = []
+    xenoList=[]
+
     characters = charactersModel.objects.all()
-    print(characters)
+    for character in characters:
+        if character.side =="imperium" :
+            imperiumList.append(character)
+        
+        elif character.side =="chaos" :
+            chaosList.append(character)
+        
+        else :
+            xenoList.append(character)
+
+    
+    
+    print(imperiumList)
+    print(chaosList)
+    print(xenoList)
+    print(character.side)
+
+
     context = {
-        'characters': characters
+        'imperiumList': imperiumList,
+        'chaosList': chaosList,
+        'xenoList': xenoList
     }
     return render(request, 'community/communitiesCharacterList.html', context)

@@ -6,14 +6,10 @@
           box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   font-family: "IBM Plex Mono", monospace;
-  height: 100%;
   background-color: #202020;
+  height: 100vh;
 }
 
 .title {
@@ -60,7 +56,6 @@ body {
 .container2 {
   background: url("./Font-Space.png");
   background-size: cover;
-  height: 100%;
 }
 
 .background {
@@ -238,5 +233,32 @@ body {
   border: none;
   color: white;
   border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.elementList {
+  text-decoration: none;
+  color: rgba(255, 166, 0, 0.575);
+  font-size: large;
+  font-weight: bold;
+}
+
+.elementList:hover {
+  color: white;
+}
+
+.listTitle {
+  color: rgba(255, 166, 0, 0.575);
+  margin-bottom: 1vh;
+}
+
+.listPresentation {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
