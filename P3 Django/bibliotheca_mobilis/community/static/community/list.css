@@ -1,0 +1,48 @@
+.tableFields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+div.row:nth-child(even) {
+  background-color: #313131;
+}
+
+.row {
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1vh;
+}
+
+.column {
+  border: white;
+  width: 20rem;
+}
+
+.rowTitle {
+  font-weight: bold;
+  color: #ffa600;
+}
+
+.data {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pictures {
+  text-align: right;
+  display: right;
+  width: 20%;
+}
+/*# sourceMappingURL=list.css.map */

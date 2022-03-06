@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from main.models import chaosAspectVenerated
 from community.forms import characterForm
 from community.models import charactersModel
+from django.templatetags.static import static
+
 # Create your views here.
 
 
@@ -24,9 +26,13 @@ def characterCreationView(request):
 
 def characterView(request, name):
     character = charactersModel.objects.get(name=name)
+    url=static('community/' + str(character.pictures))
+    
     context = {
-        'character': character
+        'character': character,
+        'picture_url': url
     }
+
     return render(request, 'community/character.html', context)
 
 

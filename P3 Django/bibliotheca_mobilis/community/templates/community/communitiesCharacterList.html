@@ -6,41 +6,44 @@
 
 {% block Add %}
 
-<div class="listPresentation">
+<div class='textPosition'>
+    <div class="listPresentation">
 
 
-    <div>
-        <h1 class="listTitle">Imperium</h1>
+        <div>
+            <h1 class="listTitle">Imperium</h1>
+        </div>
+
+        {%for character in imperiumList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                {{character.name}} {{character.race}} {{character.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+        <h1 class="listTitle">Chaos</h1>
+
+        {%for character in chaosList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                {{character.name}} {{character.race}} {{character.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+
+        <h1 class="listTitle">Xenos</h1>
+
+        {%for character in xenoList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                {{character.name}} {{character.race}} {{character.type}}
+            </a>
+
+        </div>
     </div>
 
-    {%for character in imperiumList%}
-    <div>
-        <a class="text elementList" href="{% url 'characterView' character.name %}">
-            {{character.name}} {{character.race}} {{character.type}}
-        </a>
-    </div>
-    {%endfor%}
-
-    <h1 class="listTitle">Chaos</h1>
-
-    {%for character in chaosList%}
-    <div>
-        <a class="text elementList" href="{% url 'characterView' character.name %}">
-            {{character.name}} {{character.race}} {{character.type}}
-        </a>
-    </div>
-    {%endfor%}
-
-
-    <h1 class="listTitle">Xenos</h1>
-
-    {%for character in xenoList%}
-    <div>
-        <a class="text elementList" href="{% url 'characterView' character.name %}">
-            {{character.name}} {{character.race}} {{character.type}}
-        </a>
-
-    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock Add %}

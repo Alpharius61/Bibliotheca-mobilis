@@ -47,15 +47,25 @@ body {
   color: white;
 }
 
-.container {
+.containerHeader {
   background: url("./Cruser.jpg");
   background-position: top 30% right 0%;
   background-size: cover;
 }
 
-.container2 {
-  background: url("./Font-Space.png");
+.containerContent {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("./Font-Space.jpg");
   background-size: cover;
+  background-repeat: repeat-y;
+  height: 100%;
+}
+
+.space {
+  height: 100vh;
 }
 
 .background {
@@ -89,8 +99,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin-top: -1.5rem;
-  margin-bottom: 1rem;
 }
 
 .advanceNavigationLibrary {
@@ -187,17 +195,17 @@ body {
 }
 
 .textPosition {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 5rem 20% 0 20%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5rem;
+  width: 50%;
 }
 
 .text {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: white;
   text-align: justify;
 }
@@ -249,16 +257,13 @@ body {
 
 .listTitle {
   color: rgba(255, 166, 0, 0.575);
-  margin-bottom: 1vh;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
 }
 
 .listPresentation {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */

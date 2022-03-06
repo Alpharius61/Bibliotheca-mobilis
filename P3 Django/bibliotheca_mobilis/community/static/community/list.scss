@@ -1,0 +1,40 @@
+.tableFields{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+div.row:nth-child(even){
+    background-color: rgb(49, 49, 49);
+}
+
+.row{
+ background-color: gray;
+ display: flex;
+ padding: 1vh;
+}
+
+.column{
+    border: white;
+    width: 20rem;
+}
+
+.rowTitle{
+    font-weight: bold;
+    color: rgb(255, 166, 0);
+}
+
+.data{
+    color: white;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.pictures{
+    text-align: right;
+    display;
+    width:20%;
+}
