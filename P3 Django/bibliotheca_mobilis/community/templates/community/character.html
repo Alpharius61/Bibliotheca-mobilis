@@ -40,15 +40,26 @@
 </div>
 
 <div class='containerColumn'>
+    {%if character.pictures.is_null == False %}
+    <div class='historyContentPictures'>
+        <div class='text'>
+            {{character.biography}}
+        </div>
+    </div>
+    {% else %}
+
     <div class='historyContent'>
         <div class='text'>
             {{character.biography}}
         </div>
     </div>
+    {% endif %}
 
+    {%if character.pictures.is_null == False %}
     <div class='pictures'>
         <img class='pictures' src="{{character.pictures.url}}" alt="Image du personnage">
     </div>
+    {%endif%}
 </div>
 
 

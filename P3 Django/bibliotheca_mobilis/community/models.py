@@ -10,7 +10,6 @@ from main.models import chaosAspectVenerated, creationRace, creationSide, creati
 
 class charactersModel(models.Model):
 
-
     name = models.CharField(max_length=50)
     biography = models.TextField(max_length=10000)
     type = models.ForeignKey(creationType, on_delete=models.CASCADE)

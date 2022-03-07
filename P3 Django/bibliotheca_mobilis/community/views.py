@@ -42,16 +42,19 @@ def charactersList(request):
 
     characters = charactersModel.objects.all()
     for character in characters:
-        if character.side =="Imperium" :
+        if character.pictures == None :
+            print(character.name)
+        else :
+            print(character.pictures)
+        if str(character.side) =="Imperium" :
             imperiumList.append(character)
         
-        elif character.side =="Chaos" :
+        elif str(character.side) =="Chaos" :
             chaosList.append(character)
         
         else :
             xenoList.append(character)
-
-
+        
 
     context = {
         'imperiumList': imperiumList,
