@@ -12,7 +12,7 @@ class charactersModel(models.Model):
 
 
     name = models.CharField(max_length=50)
-    biography = models.TextField(max_length=200)
+    biography = models.TextField(max_length=10000)
     type = models.ForeignKey(creationType, on_delete=models.CASCADE)
     side = models.ForeignKey(creationSide, on_delete=models.CASCADE)
     race = models.ForeignKey(creationRace, on_delete=models.CASCADE)
