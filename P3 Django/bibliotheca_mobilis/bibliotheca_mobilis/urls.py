@@ -18,6 +18,9 @@ from django.urls import path
 from main import views
 from registration import views as r_views
 from community import views as com_views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +32,8 @@ urlpatterns = [
          name='characterCreation'),
     path('character/<str:name>', com_views.characterView, name='characterView'),
     path('charactersList/', com_views.charactersList, name='charactersList'),
+    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

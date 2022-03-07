@@ -1,3 +1,19 @@
+.characterListContent{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+    width : 70%
+}
+
+.listTitle{
+    color : rgba(255, 166, 0, 0.575);
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+
 .tableFields{
     display: flex;
     flex-direction: column;
@@ -20,6 +36,7 @@ div.row:nth-child(even){
 .column{
     border: white;
     width: 20rem;
+    
 }
 
 .rowTitle{
@@ -34,7 +51,18 @@ div.row:nth-child(even){
 }
 
 .pictures{
-    text-align: right;
-    display;
-    width:20%;
+    float: right;
+    width:15rem;
+}
+
+.containerColumn{
+    display: flex;
+    // flex-direction: column;
+}
+.historyContent{
+    padding-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 45%;
+
 }

@@ -1,4 +1,8 @@
 {% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/list.css' %}">
+{% endblock extraHeader %}
 
 {% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
 
@@ -6,7 +10,7 @@
 
 {% block Add %}
 
-<div class='textPosition'>
+<div class='characterListContent'>
     <div class="listPresentation">
 
 

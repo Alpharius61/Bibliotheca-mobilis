@@ -26,11 +26,10 @@ def characterCreationView(request):
 
 def characterView(request, name):
     character = charactersModel.objects.get(name=name)
-    url=static('community/' + str(character.pictures))
+    print(character.pictures)
     
     context = {
         'character': character,
-        'picture_url': url
     }
 
     return render(request, 'community/character.html', context)
@@ -43,21 +42,15 @@ def charactersList(request):
 
     characters = charactersModel.objects.all()
     for character in characters:
-        if character.side =="imperium" :
+        if character.side =="Imperium" :
             imperiumList.append(character)
         
-        elif character.side =="chaos" :
+        elif character.side =="Chaos" :
             chaosList.append(character)
         
         else :
             xenoList.append(character)
 
-    
-    
-    print(imperiumList)
-    print(chaosList)
-    print(xenoList)
-    print(character.side)
 
 
     context = {
