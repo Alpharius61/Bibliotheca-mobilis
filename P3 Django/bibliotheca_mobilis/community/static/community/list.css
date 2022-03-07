@@ -58,8 +58,9 @@ div.row:nth-child(even) {
 }
 
 .pictures {
+  padding-top: 2rem;
   float: right;
-  width: 15rem;
+  width: 20rem;
 }
 
 .containerColumn {
@@ -70,8 +71,10 @@ div.row:nth-child(even) {
 
 .historyContent {
   padding-top: 2rem;
-  margin-right: auto;
+  padding-right: auto;
+  padding-left: auto;
+  margin-right: 3.5rem;
   margin-left: auto;
-  width: 45%;
+  width: 50%;
 }
 /*# sourceMappingURL=list.css.map */
