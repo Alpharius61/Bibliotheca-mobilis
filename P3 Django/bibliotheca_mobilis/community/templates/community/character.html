@@ -26,7 +26,7 @@
         <div class='column data'>{{character.race}}</div>
     </div>
 
-    {% if character.side == "Chaos" %}
+    {% if character.side != "Imperium" or character.side != "Xeno" %}
     <div class='row dark'>
         <div class='column rowTitle'>Chaos</div>
         <div class='column data'>{{character.chaosAspect}}</div>
@@ -40,12 +40,19 @@
 </div>
 
 <div class='containerColumn'>
-    {%if character.pictures.is_null == False %}
+
+    {%if character.pictures.is_null != True %}
+
     <div class='historyContentPictures'>
         <div class='text'>
             {{character.biography}}
         </div>
     </div>
+
+    <div class='pictures'>
+        <img class='pictures' src="{{character.pictures.url}}" alt="Image du personnage">
+    </div>
+
     {% else %}
 
     <div class='historyContent'>
@@ -54,16 +61,5 @@
         </div>
     </div>
     {% endif %}
-
-    {%if character.pictures.is_null == False %}
-    <div class='pictures'>
-        <img class='pictures' src="{{character.pictures.url}}" alt="Image du personnage">
-    </div>
-    {%endif%}
 </div>
-
-
-
-
-
 {% endblock Add %}
