@@ -55,7 +55,7 @@ body {
     background: url("./Font-Space.jpg");
     background-size: cover    ;
     background-repeat: repeat;
-    height: auto
+    height: 100vh
 
 }
 
@@ -196,12 +196,15 @@ body {
 }
 .formClass{
     background-color: rgba(255, 166, 0, 0.575);
-    color : white
+    color : white;
+
 }
 
 .accountClass{
     color : white;
     display: block;
+    margin-top: 1rem;
+
 }
 
 .formControl{
@@ -220,22 +223,13 @@ body {
     background-color: rgba(255, 166, 0, 0.575);
     border: none;
     color: white;
-    border-radius: 12px; 
+    border-radius: 12px;
+    margin-top: 1rem; 
     margin-bottom: 2rem;
     text-align: center;
 }
 
-.elementList{
-    text-decoration: none;
-    color: rgba(255, 166, 0, 0.575);
-    font-size: large;
-    font-weight: bold;
 
-    &:hover{
-        color : white
-    }
-
-}
 
 .listPresentation{
     margin-right: auto;

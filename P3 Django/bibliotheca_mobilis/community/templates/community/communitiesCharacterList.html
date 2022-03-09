@@ -21,7 +21,7 @@
         {%for character in imperiumList%}
         <div>
             <a class="text elementList" href="{% url 'characterView' character.name %}">
-                {{character.name}} {{character.race}} {{character.type}}
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
             </a>
         </div>
         {%endfor%}
@@ -31,7 +31,7 @@
         {%for character in chaosList%}
         <div>
             <a class="text elementList" href="{% url 'characterView' character.name %}">
-                {{character.name}} {{character.race}} {{character.type}}
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
             </a>
         </div>
         {%endfor%}
@@ -42,7 +42,7 @@
         {%for character in xenoList%}
         <div>
             <a class="text elementList" href="{% url 'characterView' character.name %}">
-                {{character.name}} {{character.race}} {{character.type}}
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
             </a>
 
         </div>

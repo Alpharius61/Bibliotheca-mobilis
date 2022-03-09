@@ -2,17 +2,26 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
   padding-top: 2rem;
   padding-bottom: 10rem;
-  width: 70%;
+  width: 100%;
 }
 
 .listTitle {
-  color: rgba(255, 166, 0, 0.575);
+  color: rgba(255, 166, 0, 0.9);
   padding-top: 2rem;
   padding-bottom: 0.5rem;
+}
+
+.elementList {
+  text-decoration: none;
+  color: rgba(255, 166, 0, 0.9);
+  font-size: large;
+  font-weight: bold;
+}
+
+.elementList:hover {
+  color: white;
 }
 
 .tableFields {

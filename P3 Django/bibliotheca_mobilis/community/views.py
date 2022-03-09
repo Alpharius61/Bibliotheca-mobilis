@@ -69,7 +69,7 @@ def armyCreationView(request):
         'form': form
     }
 
-    return render(request, 'community/characterCreation.html', context)
+    return render(request, 'community/armyCreation.html', context)
 
 
 def armyView(request, name):
@@ -77,7 +77,7 @@ def armyView(request, name):
     context = {
         'army': army,
     }
-    return render(request, 'community/character.html', context)
+    return render(request, 'community/army.html', context)
 
 
 def armiesList(request):
@@ -101,4 +101,4 @@ def armiesList(request):
         'chaosList': chaosList,
         'xenoList': xenoList
     }
-    return render(request, 'community/communitiesCharacterList.html', context)
+    return render(request, 'community/armiesList.html', context)
