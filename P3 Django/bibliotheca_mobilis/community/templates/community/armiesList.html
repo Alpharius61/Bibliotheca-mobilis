@@ -1,0 +1,49 @@
+{% extends 'main/_base.html' %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Armées de la communauté{% endblock title %}
+
+{% block Add %}
+
+<div class='textPosition'>
+    <div class="listPresentation">
+
+
+        <div>
+            <h1 class="listTitle">Imperium</h1>
+        </div>
+
+        {%for army in imperiumList%}
+        <div>
+            <a class="text elementList" href="{% url 'armyView' army.name %}">
+                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+        <h1 class="listTitle">Chaos</h1>
+
+        {%for army in chaosList%}
+        <div>
+            <a class="text elementList" href="{% url 'armyView' army.name %}">
+                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+
+        <h1 class="listTitle">Xenos</h1>
+
+        {%for army in xenoList%}
+        <div>
+            <a class="text elementList" href="{% url 'armyView' army.name %}">
+                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+            </a>
+
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock Add %}

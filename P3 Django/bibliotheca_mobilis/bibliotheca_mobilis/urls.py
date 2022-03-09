@@ -28,8 +28,7 @@ urlpatterns = [
     path('accountCreation/', r_views.accountCreation, name='accountCreation'),
     path('connection/', r_views.connection, name='connection'),
     path('logout/', r_views.logOut, name='logout'),
-    path('characterCreation/', com_views.characterCreationView,
-         name='characterCreation'),
+    path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
     path('character/<str:name>', com_views.characterView, name='characterView'),
     path('charactersList/', com_views.charactersList, name='charactersList'),
     
