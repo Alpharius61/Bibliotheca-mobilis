@@ -1,5 +1,6 @@
 from django import forms
-from community.models import charactersModel
+from community.models import armyModel
+from community.models import charactersModel, armyModel
 
 
 class characterForm(forms.ModelForm):
@@ -23,10 +24,10 @@ class characterForm(forms.ModelForm):
                 'class': 'formClass',
             })
 
-class ArmyForm(forms.ModelForm):
+class armyForm(forms.ModelForm):
     
     class Meta:
-        model = charactersModel
+        model = armyModel
         fields = ["type","side","race","name","chaosAspect","actualChef","firstChef","speciality","history","pictures"]
         labels = {
             'type': 'Type ',

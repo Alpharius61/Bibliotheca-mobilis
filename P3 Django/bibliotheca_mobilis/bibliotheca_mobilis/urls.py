@@ -31,6 +31,9 @@ urlpatterns = [
     path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
     path('character/<str:name>', com_views.characterView, name='characterView'),
     path('charactersList/', com_views.charactersList, name='charactersList'),
+    path('armyCreation/', com_views.armyCreationView,name='armyCreation'),
+    path('army/<str:name>', com_views.armyView, name='armyView'),
+    path('armiesList/', com_views.armiesList, name='armiesList'),
     
 ]
 

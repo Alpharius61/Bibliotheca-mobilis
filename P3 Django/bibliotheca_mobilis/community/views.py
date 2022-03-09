@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from main.models import chaosAspectVenerated
-from community.forms import characterForm
-from community.models import charactersModel
+from community.forms import characterForm, armyForm
+from community.models import charactersModel, armyModel
 from django.templatetags.static import static
 
 # Create your views here.
@@ -47,6 +47,54 @@ def charactersList(request):
         
         else :
             xenoList.append(character)
+        
+    context = {
+        'imperiumList': imperiumList,
+        'chaosList': chaosList,
+        'xenoList': xenoList
+    }
+    return render(request, 'community/communitiesCharacterList.html', context)
+
+def armyCreationView(request):
+    form = armyForm()
+    if request.method == 'POST':
+        form = characterForm(request.POST, request.FILES)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.author = request.user
+            form.save()
+            return redirect('/')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'community/characterCreation.html', context)
+
+
+def armyView(request, name):
+    army = charactersModel.objects.get(name=name)
+    context = {
+        'army': army,
+    }
+    return render(request, 'community/character.html', context)
+
+
+def armiesList(request):
+    imperiumList =[]
+    chaosList = []
+    xenoList=[]
+
+    armies = armyModel.objects.all()
+    for army in armies:
+        if str(army.side) =="Imperium" :
+            imperiumList.append(army)
+        
+        elif str(army.side) =="Chaos" :
+            chaosList.append(army)
+        
+        else :
+            xenoList.append(army)
         
     context = {
         'imperiumList': imperiumList,

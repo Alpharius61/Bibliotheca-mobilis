@@ -57,7 +57,7 @@
         <nav class="button">
             <div class="button1">
                 <button class="baseNavigation">
-                    <a href="library" class="primaryNavigation">Bibliothèque</a>
+                    <div class="primaryNavigation">Bibliothèque</div>
                 </button>
                 <div class="advanceNavigationLibrary">
                     <button class="advanceButton">
@@ -77,7 +77,7 @@
 
             <div class="button2">
                 <button class="baseNavigation">
-                    <a href="creation" class="primaryNavigation">Ajout de la communauté</a>
+                    <div class="primaryNavigation">Ajout de la communauté</div>
                 </button>
 
                 <div class="advanceNavigationComu">
@@ -87,11 +87,11 @@
                     </button>
 
                     <button class="advanceButton">
-                        <a href="creation" class="secondaryNavigationComu">Ajouter une armée</a>
+                        <a href="{% url 'armyCreation' %}" class="secondaryNavigationComu">Ajouter une armée</a>
                     </button>
 
                     <button class="advanceButton">
-                        <a href="armiesCreated" class="secondaryNavigationComu">Armées de la communauté</a>
+                        <a {% url 'armiesList' %} class="secondaryNavigationComu">Armées de la communauté</a>
                     </button>
 
                     <button class="advanceButton">
