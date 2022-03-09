@@ -18,6 +18,9 @@
 
     {% endfor %}
 
-    <button type="submit">Envoyer</button>
+    <div>
+        <button class='formButton' type="submit">Envoyer</button>
+        <a class='formButton' href={% url 'index'%}> Retour</a>
+    </div>
 </form>
 {% endblock Add %}

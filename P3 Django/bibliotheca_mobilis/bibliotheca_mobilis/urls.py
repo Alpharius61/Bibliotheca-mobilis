@@ -17,11 +17,25 @@ from django.contrib import admin
 from django.urls import path
 from main import views
 from registration import views as r_views
+from community import views as com_views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name='index'),
     path('accountCreation/', r_views.accountCreation, name='accountCreation'),
     path('connection/', r_views.connection, name='connection'),
-    path('logout/', r_views.logOut, name='logout')
+    path('logout/', r_views.logOut, name='logout'),
+    path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
+    path('character/<str:name>', com_views.characterView, name='characterView'),
+    path('charactersList/', com_views.charactersList, name='charactersList'),
+    path('armyCreation/', com_views.armyCreationView,name='armyCreation'),
+    path('army/<str:name>', com_views.armyView, name='armyView'),
+    path('armiesList/', com_views.armiesList, name='armiesList'),
+    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

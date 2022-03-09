@@ -1,0 +1,50 @@
+{% extends 'main/_base.html' %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Nouveau Personnage{% endblock title %}
+
+{% block Add %}
+
+<div class='textPosition'>
+    {% if user.is_authenticated%}
+
+    <form action="" method='post' class='formular' enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% comment %} {{form.as_p}} {% endcomment %}
+
+        {%for field in form%}
+        {% comment %} field.name = nom label (pseudo,email etc) {% endcomment %}
+        <div class="error">{{field.errors}}</div>
+        <div class="form__control">
+            <label for="{{field.name}}" class="accountClass">{{field.label}}</label>
+            {{field}}
+        </div>
+
+        {% endfor %}
+
+        <div>
+            <button class='formButton' type="submit">Envoyer</button>
+            <a class='formButton' href={% url 'index'%}> Retour</a>
+        </div>
+
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+    </form>
+
+    {% else %}
+
+    <div>
+        <p class='text'> Seule les perssonnes connéctées peuvent ajouter des connaissances.</p>
+
+        <div>
+            <a class='formButton' href={% url 'index'%}> Retour</a>
+            <a class='formButton' href={% url 'connection'%}> Se connecter</a>
+            <a class='formButton' href={% url 'accountCreation'%}> Créer un compte</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock Add %}

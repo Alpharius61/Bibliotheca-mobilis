@@ -1,0 +1,53 @@
+{% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/list.css' %}">
+{% endblock extraHeader %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Personnages de la communauté{% endblock title %}
+
+{% block Add %}
+
+<div class='characterListContent'>
+    <div class="listPresentation">
+
+
+        <div>
+            <h1 class="listTitle">Imperium</h1>
+        </div>
+
+        {%for character in imperiumList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+        <h1 class="listTitle">Chaos</h1>
+
+        {%for character in chaosList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
+            </a>
+        </div>
+        {%endfor%}
+
+
+        <h1 class="listTitle">Xenos</h1>
+
+        {%for character in xenoList%}
+        <div>
+            <a class="text elementList" href="{% url 'characterView' character.name %}">
+                Nom : {{character.name}} Race : {{character.race}} Type de création : {{character.type}}
+            </a>
+
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock Add %}

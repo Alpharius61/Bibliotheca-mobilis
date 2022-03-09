@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block pageTitle %}{% endblock pageTitle %}</title>
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    {% block extraHeader %}{% endblock extraHeader %}
 </head>
 
 <body>
     <!-- Containe the background pictures -->
 
-    <div class="container">
+    <div class="containerHeader">
         <!-- Creat a black filter between the picture and the screen to darkening the background-->
         <div class="background">
             <div class="topPictures">
@@ -23,8 +24,8 @@
                 </h1>
                 <nav>
                     <ul class="connection">
-                        {% if user.is_authenticated%}
                         <li class='userConnection'>
+                            {% if user.is_authenticated%}
                             <a href={% url 'logout'%} class='userConnection'> Se déconnecter</a>
                         </li>
 
@@ -52,62 +53,57 @@
         </div>
     </div>
 
-
-    <div class="container2">
-        <div class="space">
-            <nav class="button">
-                <div class="button1">
-
-                    <button class="baseNavigation">
-                        <a href="library" class="primaryNavigation">Bibliothèque</a>
-                    </button>
-                    <div class="advanceNavigationLibrary">
-                        <button class="advanceButton">
-                            <a href="history" class="secondaryNavigationLibrary">Histoire</a>
-                        </button>
-
-                        <button class="advanceButton">
-                            <a href="armies" class="secondaryNavigationLibrary">Armées</a>
-                        </button>
-
-                        <button class="advanceButton">
-                            <a href="characters" class="secondaryNavigationLibrary">Personnages</a>
-                        </button>
-
-                    </div>
-                </div>
-
-                <div class="button2">
-                    <button class="baseNavigation">
-                        <a href="creation" class="primaryNavigation">Ajout de la communauté</a>
+    <div class="containerButton">
+        <nav class="button">
+            <div class="button1">
+                <button class="baseNavigation">
+                    <div class="primaryNavigation">Bibliothèque</div>
+                </button>
+                <div class="advanceNavigationLibrary">
+                    <button class="advanceButton">
+                        <a href="history" class="secondaryNavigationLibrary">Histoire</a>
                     </button>
 
-                    <div class="advanceNavigationComu">
-                        <button class="advanceButton">
-                            <a href="creation" class="secondaryNavigationComu">Ajouter des savoirs</a>
-                        </button>
+                    <button class="advanceButton">
+                        <a href="armies" class="secondaryNavigationLibrary">Armées</a>
+                    </button>
 
-                        <button class="advanceButton">
-                            <a href="armiesCreated" class="secondaryNavigationComu">Armées de la communauté</a>
-                        </button>
+                    <button class="advanceButton">
+                        <a href="characters" class="secondaryNavigationLibrary">Personnages</a>
+                    </button>
 
-                        <button class="advanceButton">
-                            <a href="charactersCreated" class="secondaryNavigationComu">Personnages de la
-                                communauté</a>
-
-                        </button>
-
-                    </div>
                 </div>
-            </nav>
-
-            <div class='text'>
-                {% block Add %}{% endblock Add %}
             </div>
 
-        </div>
-    </div>
+            <div class="button2">
+                <button class="baseNavigation">
+                    <div class="primaryNavigation">Ajout de la communauté</div>
+                </button>
 
+                <div class="advanceNavigationComu">
+                    <button class="advanceButton">
+                        <a href="{% url 'characterCreation' %}" class="secondaryNavigationComu">Ajouter un
+                            personnages</a>
+                    </button>
+
+                    <button class="advanceButton">
+                        <a href="{% url 'armyCreation' %}" class="secondaryNavigationComu">Ajouter une armée</a>
+                    </button>
+
+                    <button class="advanceButton">
+                        <a href="{% url 'armiesList' %}" class="secondaryNavigationComu">Armées de la communauté</a>
+                    </button>
+
+                    <button class="advanceButton">
+                        <a href="{% url 'charactersList'%}" class="secondaryNavigationComu">Personnages de la
+                            communauté</a>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class='containerContent'>
+        {% block Add %}{% endblock Add %}
     </div>
 </body>
 

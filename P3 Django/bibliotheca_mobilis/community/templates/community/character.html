@@ -1,0 +1,56 @@
+{% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/list.css' %}">
+{% endblock extraHeader %}
+
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}{{character.name}}{% endblock title %}
+
+{% block Add %}
+
+
+<div class='tableFields'>
+    <div class='row'>
+        <div class='column rowTitle'>Nom</div>
+        <div class='column data'>{{character.name}}</div>
+    </div>
+    <div class='row dark'>
+        <div class='column rowTitle'>Camp</div>
+        <div class='column data'>{{character.side}}</div>
+    </div>
+    <div class='row'>
+        <div class='column rowTitle'>Race</div>
+        <div class='column data'>{{character.race}}</div>
+    </div>
+
+    {% if character.side == "chaos" %}
+    <div class='row dark'>
+        <div class='column rowTitle'>Chaos</div>
+        <div class='column data'>{{character.chaosAspect}}</div>
+    </div>
+    {% endif %}
+
+    <div class='row'>
+        <div class='column rowTitle'>Auteur</div>
+        <div class='column data'>{{character.author}}</div>
+    </div>
+</div>
+
+<div class='containerColumn'>
+    <div class='pictures'>
+        <img class='pictures' src="{{picture_url}}" alt="Image du personnage">
+    </div>
+
+    <div class='text'>
+        {{character.biography}}
+    </div>
+</div>
+
+
+
+
+
+{% endblock Add %}

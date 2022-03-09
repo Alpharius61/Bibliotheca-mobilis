@@ -1,10 +1,8 @@
 import imp
-
-
 import logging
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from registration.forms import accountCreationForm , auth
+from registration.forms import accountCreationForm , authification
 # Create your views here.
 
 
@@ -25,11 +23,11 @@ def accountCreation(request):
 
 
 def connection(request):
-    form = auth()
+    form = authification()
     logger = logging.getLogger('toto')
     if request.method == 'POST':
         logger.debug ("""connection: request.method = 'POST'""")
-        form = auth(data=request.POST)
+        form = authification(data=request.POST)
 
         if form.is_valid():
             logger.debug ("""connection: form is valid""")                        

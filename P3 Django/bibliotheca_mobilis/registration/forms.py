@@ -1,4 +1,3 @@
-from email.policy import default
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -29,7 +28,7 @@ class accountCreationForm(UserCreationForm):
 
 
 
-class auth(AuthenticationForm):
+class authification(AuthenticationForm):
     
     class Meta:
         model = User
