@@ -17,15 +17,28 @@
     color : white;
 
 }
+.formControl{
+    margin-bottom: 2rem;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
 
 .accountClass{
     color : white;
     display: block;
-    margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 .formular{
     margin-left: auto;
     margin-right: auto;
-    width: 55%;
+    width: 30%;
+}
+
+.submitButton{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%
 }

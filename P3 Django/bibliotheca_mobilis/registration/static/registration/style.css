@@ -11,4 +11,34 @@
   margin-bottom: 2rem;
   text-align: center;
 }
+
+.formClass {
+  background-color: rgba(255, 166, 0, 0.575);
+  color: white;
+}
+
+.formControl {
+  margin-bottom: 2rem;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.accountClass {
+  color: white;
+  display: block;
+  padding-top: 1rem;
+}
+
+.formular {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.submitButton {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
 /*# sourceMappingURL=style.css.map */

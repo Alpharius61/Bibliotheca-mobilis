@@ -59,7 +59,7 @@ body {
   background: url("./Font-Space.jpg");
   background-size: cover;
   background-repeat: repeat;
-  height: 100vh;
+  height: auto;
 }
 
 .space {
@@ -214,49 +214,5 @@ body {
 
 .beginning:hover {
   color: white;
-}
-
-.formular {
-  margin-left: auto;
-  margin-right: auto;
-  width: 55%;
-}
-
-.formClass {
-  background-color: rgba(255, 166, 0, 0.575);
-  color: white;
-}
-
-.accountClass {
-  color: white;
-  display: block;
-  margin-top: 1rem;
-}
-
-.formControl {
-  margin-bottom: 2rem;
-  float: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.formButton {
-  font-family: "IBM Plex Mono", monospace;
-  text-decoration: none;
-  font-size: small;
-  padding: 0.5rem;
-  background-color: rgba(255, 166, 0, 0.575);
-  border: none;
-  color: white;
-  border-radius: 12px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.listPresentation {
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */

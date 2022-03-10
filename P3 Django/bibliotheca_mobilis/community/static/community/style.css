@@ -4,16 +4,18 @@
   width: 50%;
 }
 
-.formControl {
-  margin-bottom: 2rem;
-  float: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.formClass {
+.formButton {
+  font-family: "IBM Plex Mono", monospace;
+  text-decoration: none;
+  font-size: small;
+  padding: 0.5rem;
   background-color: rgba(255, 166, 0, 0.575);
+  border: none;
   color: white;
+  border-radius: 12px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .characterListContent {
@@ -21,7 +23,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding-top: 2rem;
-  padding-bottom: 10rem;
+  padding-bottom: 20rem;
   width: 100%;
 }
 
