@@ -56,7 +56,6 @@ body {
     background-size: cover    ;
     background-repeat: repeat;
     height: 100vh
-
 }
 
 .space{
@@ -110,7 +109,6 @@ body {
 .button1{
     flex-direction: column;
     width: 100%;
-
     &:hover>.advanceNavigationLibrary {
         display: flex;
         position: absolute; 
@@ -136,14 +134,12 @@ body {
     }
 }
 
-
 .advanceButton{
     background-color: black;
     border-radius: 0px;
     border-color: black;
     padding: .5rem 0 .5rem 0;
 }
-
 
 .baseNavigation {
     background-color: rgb(0, 0, 0);
@@ -163,7 +159,6 @@ body {
     display: none;
 }
 
-
 .textPosition{
     justify-content: center;
     margin-left: auto;
@@ -181,59 +176,7 @@ body {
 
 .beginning{
     color : rgb(255, 166, 0);
-}
-
-.beginning:hover{
-
-    color :rgb(255, 255, 255)
-  
-}
-
-.formular{
-    margin-left: auto;
-    margin-right: auto;
-    width: 55%;
-}
-.formClass{
-    background-color: rgba(255, 166, 0, 0.575);
-    color : white;
-
-}
-
-.accountClass{
-    color : white;
-    display: block;
-    margin-top: 1rem;
-
-}
-
-.formControl{
-    margin-bottom: 2rem;
-    float: center;
-    margin-right: auto;
-    margin-left: auto;
-
-}
-
-.formButton{
-    font-family: "IBM Plex Mono", monospace;
-    text-decoration: none;
-    font-size: small;
-    padding: 0.5rem;
-    background-color: rgba(255, 166, 0, 0.575);
-    border: none;
-    color: white;
-    border-radius: 12px;
-    margin-top: 1rem; 
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-
-
-.listPresentation{
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-
+    &:hover{
+        color :rgb(255, 255, 255)
+    }
 }

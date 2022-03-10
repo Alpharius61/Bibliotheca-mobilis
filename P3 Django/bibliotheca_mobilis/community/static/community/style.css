@@ -1,3 +1,21 @@
+.listPresentation {
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+.formControl {
+  margin-bottom: 2rem;
+  float: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.formClass {
+  background-color: rgba(255, 166, 0, 0.575);
+  color: white;
+}
+
 .characterListContent {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -96,4 +114,4 @@ div.row:nth-child(even) {
   width: 71%;
   height: 100vh;
 }
-/*# sourceMappingURL=list.css.map */
+/*# sourceMappingURL=style.css.map */

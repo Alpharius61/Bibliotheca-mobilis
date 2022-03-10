@@ -1,3 +1,43 @@
+.listPresentation{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.formButton{
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+    font-size: small;
+    padding: 0.5rem;
+    background-color: rgba(255, 166, 0, 0.575);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    margin-top: 1rem; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formControl{
+    margin-bottom: 2rem;
+    float: center;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.formControl{
+    margin-bottom: 2rem;
+    float: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.formClass{
+    background-color: rgba(255, 166, 0, 0.575);
+    color : white;
+}
+
 .characterListContent{
     justify-content: center;
     padding-top: 2rem;

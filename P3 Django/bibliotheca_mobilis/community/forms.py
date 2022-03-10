@@ -7,12 +7,13 @@ class characterForm(forms.ModelForm):
     
     class Meta:
         model = charactersModel
-        fields = ["type","side","race","name","chaosAspect","biography","pictures"]
+        fields = ["historicCreation","side","race","name","chaosAspect","speciality","biography","pictures"]
         labels = {
             'type': 'Type ',
             'side': 'Camp ',
             'name': 'Nom ',
             'chaosAspect': 'Aspect du chaos vénéré ',
+            'speciality' : 'Spécialité(s)',
             'biography': 'Biographie',
             'pictures': 'Image',
         }
@@ -28,7 +29,7 @@ class armyForm(forms.ModelForm):
     
     class Meta:
         model = armyModel
-        fields = ["type","side","race","name","chaosAspect","actualChef","firstChef","speciality","history","pictures"]
+        fields = ["historicCreation","side","race","name","chaosAspect","speciality","actualChef","firstChef","history","pictures"]
         labels = {
             'type': 'Type ',
             'side': 'Camp ',
@@ -37,7 +38,7 @@ class armyForm(forms.ModelForm):
             'history': 'Histoire',
             'actualChef' :'Chef actuel',
             'firstChef' : 'Premier chef',
-            'speciality' : 'Spécialité',
+            'speciality' : 'Spécialité(s)',
             'pictures': 'Image',
         }
 

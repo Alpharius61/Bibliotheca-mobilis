@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
-from main.models import chaosAspectVenerated
 from community.forms import characterForm, armyForm
-from community.models import charactersModel, armyModel
+from community.models import charactersModel, armyModel, chaosAspectVenerated
 from django.templatetags.static import static
 
 # Create your views here.
