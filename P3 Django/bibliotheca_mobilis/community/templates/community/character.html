@@ -1,5 +1,8 @@
 {% extends 'main/_base.html' %}
 {% load static %}
+{% load custom_tags %}
+
+
 {% block extraHeader %}
 <link rel="stylesheet" href="{% static 'community/style.css' %}">
 {% endblock extraHeader %}
@@ -26,7 +29,7 @@
         <div class='column data'>{{character.race}}</div>
     </div>
 
-    {% if character.side == "chaos" %}
+    {% if character.side|to_str == "Chaos" %}
     <div class='row dark'>
         <div class='column rowTitle'>Chaos</div>
         <div class='column data'>{{character.chaosAspect}}</div>
@@ -34,19 +37,40 @@
     {% endif %}
 
     <div class='row'>
+        <div class='column rowTitle'>Spécialité(s)</div>
+        {% for speciality in character.speciality.all %}
+        <div class='column data'>{{speciality}}</div>
+        {%empty%}
+        <div class='column data'>Aucune</div>
+        {% endfor %}
+    </div>
+
+    <div class='row'>
         <div class='column rowTitle'>Auteur</div>
         <div class='column data'>{{character.author}}</div>
     </div>
+
+
 </div>
 
 <div class='containerColumn'>
-    <div class='pictures'>
-        <img class='pictures' src="{{picture_url}}" alt="Image du personnage">
-    </div>
-
-    <div class='text'>
+    {% if character.pictures %}
+    <div class='historyContentPictures text'>
         {{character.biography}}
     </div>
+
+
+    <div class='pictures'>
+        <img class='pictures' src="{{character.pictures.url}}" alt="Image du personnage">
+    </div>
+
+
+    {% else %}
+
+    <div class='historyContent text'>
+        {{character.biography}}
+    </div>
+    {% endif %}
 </div>
 
 

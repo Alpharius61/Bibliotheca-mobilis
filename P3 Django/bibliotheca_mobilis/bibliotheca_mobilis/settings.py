@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'bibliotheca',
     'registration',
     'community',
-    # 'multiselectfield'
 ]
 
 MIDDLEWARE = [

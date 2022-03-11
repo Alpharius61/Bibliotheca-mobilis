@@ -99,7 +99,7 @@ body {
   width: 100%;
 }
 
-.advanceNavigationLibrary {
+.advanceNavigation {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -112,14 +112,6 @@ body {
   border-radius: 0px;
   width: 50%;
   display: none;
-}
-
-.secondaryNavigationLibrary {
-  color: #ffa600;
-  background-color: black;
-  font-family: "IBM Plex Mono", monospace;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .button1 {
@@ -138,12 +130,20 @@ body {
   background-color: black;
 }
 
-.secondaryNavigationComu {
+.secondaryNavigation {
   color: #ffa600;
   background-color: black;
   font-family: "IBM Plex Mono", monospace;
   text-decoration: none;
   font-weight: bold;
+  text-align: center;
+  border-radius: 0px;
+  border: solid 1px white;
+  padding: .5rem 0 .5rem 0;
+}
+
+.secondaryNavigation:hover {
+  background-color: #222222;
 }
 
 .button2 {
@@ -162,34 +162,12 @@ body {
   background-color: black;
 }
 
-.advanceButton {
-  background-color: black;
-  border-radius: 0px;
-  border-color: black;
-  padding: .5rem 0 .5rem 0;
-}
-
 .baseNavigation {
   background-color: black;
   display: block;
   padding: 0.5em 0em 0.5em 0em;
   border-radius: 0px;
   width: 100%;
-}
-
-.advanceNavigationComu {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: black;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: block;
-  border-radius: 0px;
-  width: 50%;
-  display: none;
 }
 
 .textPosition {

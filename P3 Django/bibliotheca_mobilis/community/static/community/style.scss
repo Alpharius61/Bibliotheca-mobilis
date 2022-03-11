@@ -90,16 +90,10 @@ div.row:nth-child(even){
 .containerColumn{
     display: flex;
 }
-.historyContentPictures{
-    padding-top: 2rem;
-    padding-right: auto;
-    padding-left: auto;
-    margin-right: 3.5rem;
-    margin-left: auto;
-    width: 50%;
 
-}
-.historyContent{
+
+
+.historyContent, .historyContentPictures{
     padding-top: 2rem;
     padding-right: auto;
     padding-left: auto;
@@ -107,4 +101,15 @@ div.row:nth-child(even){
     margin-left: auto;
     width: 71%;
     height: 100vh;
+    
+    &Pictures{
+    width: 50%;
+    height: auto;
+
+}
+}
+
+
+#id_speciality{
+    grid-column: 2;
 }

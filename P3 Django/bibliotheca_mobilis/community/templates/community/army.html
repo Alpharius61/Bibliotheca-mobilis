@@ -26,7 +26,7 @@
         <div class='column data'>{{army.race}}</div>
     </div>
 
-    {% if army.side == "chaos" %}
+    {% if army.side|to_str == "Chaos" %}
     <div class='row dark'>
         <div class='column rowTitle'>Chaos</div>
         <div class='column data'>{{army.chaosAspect}}</div>

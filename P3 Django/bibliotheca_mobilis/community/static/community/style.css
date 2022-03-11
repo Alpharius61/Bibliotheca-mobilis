@@ -98,16 +98,7 @@ div.row:nth-child(even) {
   display: flex;
 }
 
-.historyContentPictures {
-  padding-top: 2rem;
-  padding-right: auto;
-  padding-left: auto;
-  margin-right: 3.5rem;
-  margin-left: auto;
-  width: 50%;
-}
-
-.historyContent {
+.historyContent, .historyContentPictures {
   padding-top: 2rem;
   padding-right: auto;
   padding-left: auto;
@@ -115,5 +106,15 @@ div.row:nth-child(even) {
   margin-left: auto;
   width: 71%;
   height: 100vh;
+}
+
+.historyContentPictures, .historyContentPicturesPictures {
+  width: 50%;
+  height: auto;
+}
+
+#id_speciality {
+  -ms-grid-column: 2;
+  grid-column: 2;
 }
 /*# sourceMappingURL=style.css.map */
