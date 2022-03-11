@@ -1,9 +1,10 @@
 from django import forms
 from community.models import armyModel
-from community.models import charactersModel, armyModel
+from community.models import charactersModel, armyModel, speciality
 
 
 class characterForm(forms.ModelForm):
+    speciality = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple, queryset=speciality.objects.all())
     
     class Meta:
         model = charactersModel
@@ -17,6 +18,7 @@ class characterForm(forms.ModelForm):
             'biography': 'Biographie',
             'pictures': 'Image',
         }
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
