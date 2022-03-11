@@ -22,7 +22,8 @@
         {%for army in imperiumList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom :{{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
         </div>
         {%endfor%}
@@ -32,7 +33,8 @@
         {%for army in chaosList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom :{{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
         </div>
         {%endfor%}
@@ -43,12 +45,14 @@
         {%for army in xenoList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom :{{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
 
         </div>
+        {% endfor %}
     </div>
 
-    {% endfor %}
+
 </div>
 {% endblock Add %}

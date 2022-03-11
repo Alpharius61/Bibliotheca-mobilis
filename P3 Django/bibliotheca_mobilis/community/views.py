@@ -14,7 +14,6 @@ def characterCreationView(request):
             character = form.save(commit=False)
             character.author = request.user
             character.save()
-
             for fieldSpeciality in request.POST['speciality']:
                 characterSpeciality = speciality.objects.get(
                     id=fieldSpeciality)
@@ -65,12 +64,17 @@ def charactersList(request):
 def armyCreationView(request):
     form = armyForm()
     if request.method == 'POST':
-        form = characterForm(request.POST, request.FILES)
+        form = armyForm(request.POST, request.FILES)
         if form.is_valid():
-            form = form.save(commit=False)
-            form.author = request.user
-            form.save()
-            return redirect('/')
+            army = form.save(commit=False)
+            army.author = request.user
+            army.save()
+            for fieldSpeciality in request.POST['speciality']:
+                armySpeciality = speciality.objects.get(
+                    id=fieldSpeciality)
+                print(armySpeciality)
+                army.speciality.add(armySpeciality)
+        return redirect('/')
 
     context = {
         'form': form
@@ -80,7 +84,7 @@ def armyCreationView(request):
 
 
 def armyView(request, name):
-    army = charactersModel.objects.get(name=name)
+    army = armyModel.objects.get(name=name)
     context = {
         'army': army,
     }

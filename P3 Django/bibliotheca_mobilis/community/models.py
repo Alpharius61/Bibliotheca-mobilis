@@ -50,7 +50,7 @@ class armyModel(models.Model):
     race = models.ForeignKey(creationRace, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     chaosAspect = models.ForeignKey(chaosAspectVenerated, on_delete=models.CASCADE, null=True, blank=True)
-    pictures = models.ImageField(null=True, blank=True, upload_to=("community\characterspictures"))
+    pictures = models.ImageField(null=True, blank=True, upload_to=("community/armypictures"))
     actualChef = models.CharField(max_length=50)
     firstChef = models.CharField(max_length=50, null=True, blank=True)
 

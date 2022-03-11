@@ -40,8 +40,6 @@
         <div class='column rowTitle'>Spécialité(s)</div>
         {% for speciality in character.speciality.all %}
         <div class='column data'>{{speciality}}</div>
-        {%empty%}
-        <div class='column data'>Aucune</div>
         {% endfor %}
     </div>
 

@@ -88,8 +88,7 @@ div.row:nth-child(even) {
 
 .pictures {
   padding-top: 2rem;
-  float: right;
-  width: 22.5rem;
+  width: 21.0rem;
 }
 
 .containerColumn {
@@ -102,13 +101,14 @@ div.row:nth-child(even) {
   padding-top: 2rem;
   padding-right: auto;
   padding-left: auto;
-  margin-right: 3.5rem;
+  margin-right: auto;
   margin-left: auto;
-  width: 71%;
+  width: 50%;
   height: 100vh;
 }
 
 .historyContentPictures, .historyContentPicturesPictures {
+  margin-right: 2.5rem;
   width: 50%;
   height: auto;
 }
