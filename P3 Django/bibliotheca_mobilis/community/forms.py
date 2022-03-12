@@ -43,7 +43,7 @@ class armyForm(forms.ModelForm):
         fields = ["historicCreation", "side", "race", "name", "chaosAspect",
                   "speciality", "actualChef", "firstChef", "history", "pictures"]
         labels = {
-            'type': 'Type ',
+            'historicCreation': 'Création historique',
             'side': 'Camp ',
             'name': 'Nom ',
             'chaosAspect': 'Aspect du chaos vénéré ',
