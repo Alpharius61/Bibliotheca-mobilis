@@ -36,7 +36,7 @@
 
     <div class='row'>
         <div class='column rowTitle'>
-            {% if army.race != spaceMarine %}
+            {% if army.race|to_str != 'spaceMarine' %}
             Chef actuel
             {% else %}
             Maître du chapitre

@@ -60,6 +60,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   height: auto;
+  min-height: 100vh;
 }
 
 .space {
