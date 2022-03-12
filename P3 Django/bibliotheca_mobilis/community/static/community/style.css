@@ -89,7 +89,11 @@ div.row:nth-child(even) {
 
 .pictures {
   padding-top: 2rem;
-  width: 21.0rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 20px;
+  width: 100%;
 }
 
 .containerColumn {
@@ -98,24 +102,19 @@ div.row:nth-child(even) {
   display: flex;
 }
 
-.historyContent, .historyContentPictures {
+.leftColumn {
+  width: 25%;
+  padding: 0,10px,0,10px;
+}
+
+.centerColumn {
+  margin: 0;
   padding-top: 2rem;
-  padding-right: auto;
-  padding-left: auto;
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
-  height: 100vh;
 }
 
-.historyContentPictures, .historyContentPicturesPictures {
-  margin-right: 2.5rem;
-  width: 50%;
-  height: auto;
-}
-
-#id_speciality {
-  -ms-grid-column: 2;
-  grid-column: 2;
+.rightColumn {
+  width: 25%;
+  margin: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

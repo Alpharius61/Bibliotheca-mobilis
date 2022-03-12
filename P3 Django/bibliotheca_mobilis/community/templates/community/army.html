@@ -65,24 +65,20 @@
 
 </div>
 
+
 <div class='containerColumn'>
+    <div class='leftColumn'></div>
 
-    {% if army.pictures %}
-    <div class='historyContentPictures text'>
+
+    <div class='centerColumn text'>
         {{army.history}}
     </div>
 
-
-    <div class='pictures'>
+    <div class="rightColumn">
+        {% if army.pictures %}
         <img class='pictures' src="{{army.pictures.url}}" alt="Image du personnage">
+        {% endif %}
     </div>
-
-    {% else %}
-
-    <div class='historyContent text'>
-        {{army.history}}
-    </div>
-    {% endif %}
 </div>
 
 

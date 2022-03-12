@@ -25,13 +25,18 @@ class characterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['speciality'].widget.attrs.update(
-            {'class': 'formClass specialityForm'})
+            {'class': 'formClass specialityForm'},
 
+        )
+
+        self.fields['biography'].widget.attrs.update(
+            {'cols': '68'})
+        
         for field in self.fields:
             self.fields[field].widget.attrs.update({
                 'class': 'formClass',
-
             })
+
 
 
 class armyForm(forms.ModelForm):
@@ -57,7 +62,13 @@ class armyForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['speciality'].widget.attrs.update(
-            {'class': 'formClass specialityForm'})
+            {'class': 'formClass specialityForm',
+            'onclick' : 'checkCount(this.id);'}
+        )
+
+        self.fields['history'].widget.attrs.update(
+            {'cols': '68'})
+        
         for field in self.fields:
             self.fields[field].widget.attrs.update({
                 'class': 'formClass',

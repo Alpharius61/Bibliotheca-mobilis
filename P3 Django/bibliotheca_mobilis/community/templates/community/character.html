@@ -52,27 +52,18 @@
 </div>
 
 <div class='containerColumn'>
-    {% if character.pictures %}
-    <div class='historyContentPictures text'>
+    <div class='leftColumn'></div>
+
+
+    <div class='centerColumn text'>
         {{character.biography}}
     </div>
 
-
-    <div class='pictures'>
+    <div class="rightColumn">
+        {% if character.pictures %}
         <img class='pictures' src="{{character.pictures.url}}" alt="Image du personnage">
+        {% endif %}
     </div>
-
-
-    {% else %}
-
-    <div class='historyContent text'>
-        {{character.biography}}
-    </div>
-    {% endif %}
 </div>
-
-
-
-
 
 {% endblock Add %}

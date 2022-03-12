@@ -15,11 +15,12 @@
 .formClass{
     background-color: rgba(255, 166, 0, 0.575);
     color : white;
+    column-count: 2;
 
 }
 .formControl{
-    margin-bottom: 2rem;
-    width: 60%;
+    margin-bottom: 1rem;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 
@@ -34,7 +35,7 @@
 .formular{
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 60rem;
 }
 
 .submitButton{
