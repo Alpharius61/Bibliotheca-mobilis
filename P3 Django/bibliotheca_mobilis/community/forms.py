@@ -1,32 +1,34 @@
-from re import S
 from django import forms
 from community.models import armyModel
 from community.models import charactersModel, armyModel, speciality
 
 
 class characterForm(forms.ModelForm):
-    speciality = forms.ModelMultipleChoiceField(
+    specialities = forms.ModelMultipleChoiceField(label = 'Spécialité(s)',
         widget=forms.CheckboxSelectMultiple, queryset=speciality.objects.all())
 
     class Meta:
         model = charactersModel
         fields = ["historicCreation", "side", "race", "name",
-                  "chaosAspect", "speciality", "biography", "pictures"]
+                  "chaosAspect",'specialities',"biography", "pictures"]
         labels = {
             'type': 'Type ',
             'side': 'Camp ',
             'name': 'Nom ',
             'chaosAspect': 'Aspect du chaos vénéré ',
-            'speciality': 'Spécialité(s)',
             'biography': 'Biographie',
             'pictures': 'Image',
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['speciality'].widget.attrs.update(
-            {'class': 'formClass specialityForm'},
 
+        self.fields['specialities'].widget.attrs.update(
+            {'class': 'formClass specialityForm',
+            'onclick' : 'checkCount(this.id);'}
+        )
+        self.fields['side'].widget.attrs.update(
+            {'onchange' : 'updateRace(this.value);'}
         )
 
         self.fields['biography'].widget.attrs.update(
@@ -40,13 +42,13 @@ class characterForm(forms.ModelForm):
 
 
 class armyForm(forms.ModelForm):
-    speciality = forms.ModelMultipleChoiceField(
+    specialities = forms.ModelMultipleChoiceField(label = 'Spécialité(s)',
         widget=forms.CheckboxSelectMultiple, queryset=speciality.objects.all())
 
     class Meta:
         model = armyModel
         fields = ["historicCreation", "side", "race", "name", "chaosAspect",
-                  "speciality", "actualChef", "firstChef", "history", "pictures"]
+                  "specialities", "actualChef", "firstChef", "history", "pictures"]
         labels = {
             'historicCreation': 'Création historique',
             'side': 'Camp ',
@@ -55,13 +57,12 @@ class armyForm(forms.ModelForm):
             'history': 'Histoire',
             'actualChef': 'Chef actuel',
             'firstChef': 'Premier chef',
-            'speciality': 'Spécialité(s)',
             'pictures': 'Image',
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['speciality'].widget.attrs.update(
+        self.fields['specialities'].widget.attrs.update(
             {'class': 'formClass specialityForm',
             'onclick' : 'checkCount(this.id);'}
         )

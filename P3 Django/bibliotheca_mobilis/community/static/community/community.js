@@ -1,6 +1,6 @@
 function checkCount(id) {
 
-    var items = document.getElementById('id_speciality').getElementsByTagName('input')
+    var items = document.getElementById('id_specialities').getElementsByTagName('input')
     var count = 0
 
     for (i = 0; i < items.length; i++) {
@@ -18,4 +18,11 @@ function checkCount(id) {
         alert('Seules trois spécialités peuvent être séléctionnées')
         document.getElementById(id).checked = false
     }
+}
+
+function updateRace(side) {
+    alert(side)
+    xhttp.open("GET", "ajax_info.txt", false);
+    xhttp.send();
+    document.getElementById("demo").innerHTML = xhttp.responseText;
 }
