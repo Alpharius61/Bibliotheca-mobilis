@@ -1,7 +1,8 @@
 {% extends 'main/_base.html' %}
 {% load static %}
 {% block extraHeader %}
-<link rel="stylesheet" href="{% static 'community/list.css' %}">
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+<link rel="stylesheet" href="{% static 'registration/style.css' %}">
 {% endblock extraHeader %}
 
 {% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
@@ -21,7 +22,8 @@
         {%for army in imperiumList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom : {{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
         </div>
         {%endfor%}
@@ -31,7 +33,8 @@
         {%for army in chaosList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom : {{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
         </div>
         {%endfor%}
@@ -42,12 +45,14 @@
         {%for army in xenoList%}
         <div>
             <a class="text elementList" href="{% url 'armyView' army.name %}">
-                Nom :{{army.name}} Race : {{army.race}} Type de création : {{army.type}}
+                Nom : {{army.name}} Race : {{army.race}} Type de création :
+                {% if army.historicCreation == 'True' %} Historique {% else %}Personnel{% endif %}
             </a>
 
         </div>
+        {% endfor %}
     </div>
 
-    {% endfor %}
+
 </div>
 {% endblock Add %}

@@ -59,7 +59,8 @@ body {
   background: url("./Font-Space.jpg");
   background-size: cover;
   background-repeat: repeat;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
 
 .space {
@@ -99,7 +100,7 @@ body {
   width: 100%;
 }
 
-.advanceNavigationLibrary {
+.advanceNavigation {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -112,14 +113,6 @@ body {
   border-radius: 0px;
   width: 50%;
   display: none;
-}
-
-.secondaryNavigationLibrary {
-  color: #ffa600;
-  background-color: black;
-  font-family: "IBM Plex Mono", monospace;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .button1 {
@@ -138,12 +131,20 @@ body {
   background-color: black;
 }
 
-.secondaryNavigationComu {
+.secondaryNavigation {
   color: #ffa600;
   background-color: black;
   font-family: "IBM Plex Mono", monospace;
   text-decoration: none;
   font-weight: bold;
+  text-align: center;
+  border-radius: 0px;
+  border: solid 1px white;
+  padding: .5rem 0 .5rem 0;
+}
+
+.secondaryNavigation:hover {
+  background-color: #222222;
 }
 
 .button2 {
@@ -162,34 +163,12 @@ body {
   background-color: black;
 }
 
-.advanceButton {
-  background-color: black;
-  border-radius: 0px;
-  border-color: black;
-  padding: .5rem 0 .5rem 0;
-}
-
 .baseNavigation {
   background-color: black;
   display: block;
   padding: 0.5em 0em 0.5em 0em;
   border-radius: 0px;
   width: 100%;
-}
-
-.advanceNavigationComu {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: black;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: block;
-  border-radius: 0px;
-  width: 50%;
-  display: none;
 }
 
 .textPosition {
@@ -214,49 +193,5 @@ body {
 
 .beginning:hover {
   color: white;
-}
-
-.formular {
-  margin-left: auto;
-  margin-right: auto;
-  width: 55%;
-}
-
-.formClass {
-  background-color: rgba(255, 166, 0, 0.575);
-  color: white;
-}
-
-.accountClass {
-  color: white;
-  display: block;
-  margin-top: 1rem;
-}
-
-.formControl {
-  margin-bottom: 2rem;
-  float: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.formButton {
-  font-family: "IBM Plex Mono", monospace;
-  text-decoration: none;
-  font-size: small;
-  padding: 0.5rem;
-  background-color: rgba(255, 166, 0, 0.575);
-  border: none;
-  color: white;
-  border-radius: 12px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.listPresentation {
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */

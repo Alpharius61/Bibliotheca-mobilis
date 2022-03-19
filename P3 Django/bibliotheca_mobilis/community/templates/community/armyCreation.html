@@ -1,4 +1,10 @@
 {% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/style.css' %}" />
+<link rel="stylesheet" href="{% static 'registration/style.css' %}" />
+<script src="{% static 'community/community.js' %}"></script>
+{% endblock extraHeader %}
 
 {% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
 
@@ -17,7 +23,7 @@
         {%for field in form%}
         {% comment %} field.name = nom label (pseudo,email etc) {% endcomment %}
         <div class="error">{{field.errors}}</div>
-        <div class="form__control">
+        <div class="formControl">
             <label for="{{field.name}}" class="accountClass">{{field.label}}</label>
             {{field}}
         </div>

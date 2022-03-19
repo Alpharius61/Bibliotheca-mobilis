@@ -1,13 +1,16 @@
 from django import forms
 from community.models import armyModel
-from community.models import charactersModel, armyModel
+from community.models import charactersModel, armyModel, speciality
 
 
 class characterForm(forms.ModelForm):
-    
+    specialities = forms.ModelMultipleChoiceField(label = 'Spécialité(s)',
+        widget=forms.CheckboxSelectMultiple, queryset=speciality.objects.all())
+
     class Meta:
         model = charactersModel
-        fields = ["type","side","race","name","chaosAspect","biography","pictures"]
+        fields = ["historicCreation", "side", "race", "name",
+                  "chaosAspect",'specialities',"biography", "pictures"]
         labels = {
             'type': 'Type ',
             'side': 'Camp ',
@@ -19,30 +22,54 @@ class characterForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['specialities'].widget.attrs.update(
+            {'class': 'formClass specialityForm',
+            'onclick' : 'checkCount(this.id);'}
+        )
+        self.fields['side'].widget.attrs.update(
+            {'onchange' : 'updateRace(this.value);'}
+        )
+
+        self.fields['biography'].widget.attrs.update(
+            {'cols': '68'})
+        
         for field in self.fields:
             self.fields[field].widget.attrs.update({
                 'class': 'formClass',
             })
 
+
+
 class armyForm(forms.ModelForm):
-    
+    specialities = forms.ModelMultipleChoiceField(label = 'Spécialité(s)',
+        widget=forms.CheckboxSelectMultiple, queryset=speciality.objects.all())
+
     class Meta:
         model = armyModel
-        fields = ["type","side","race","name","chaosAspect","actualChef","firstChef","speciality","history","pictures"]
+        fields = ["historicCreation", "side", "race", "name", "chaosAspect",
+                  "specialities", "actualChef", "firstChef", "history", "pictures"]
         labels = {
-            'type': 'Type ',
+            'historicCreation': 'Création historique',
             'side': 'Camp ',
             'name': 'Nom ',
             'chaosAspect': 'Aspect du chaos vénéré ',
             'history': 'Histoire',
-            'actualChef' :'Chef actuel',
-            'firstChef' : 'Premier chef',
-            'speciality' : 'Spécialité',
+            'actualChef': 'Chef actuel',
+            'firstChef': 'Premier chef',
             'pictures': 'Image',
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['specialities'].widget.attrs.update(
+            {'class': 'formClass specialityForm',
+            'onclick' : 'checkCount(this.id);'}
+        )
+
+        self.fields['history'].widget.attrs.update(
+            {'cols': '68'})
+        
         for field in self.fields:
             self.fields[field].widget.attrs.update({
                 'class': 'formClass',

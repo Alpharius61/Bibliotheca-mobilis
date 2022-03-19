@@ -59,18 +59,12 @@
                 <button class="baseNavigation">
                     <div class="primaryNavigation">Bibliothèque</div>
                 </button>
-                <div class="advanceNavigationLibrary">
-                    <button class="advanceButton">
-                        <a href="history" class="secondaryNavigationLibrary">Histoire</a>
-                    </button>
+                <div class="advanceNavigation advanceNavigationLibrary">
+                    <a href="history" class="secondaryNavigation">Histoire</a>
 
-                    <button class="advanceButton">
-                        <a href="armies" class="secondaryNavigationLibrary">Armées</a>
-                    </button>
+                    <a href="armies" class="secondaryNavigation">Armées</a>
 
-                    <button class="advanceButton">
-                        <a href="characters" class="secondaryNavigationLibrary">Personnages</a>
-                    </button>
+                    <a href="characters" class="secondaryNavigation">Personnages</a>
 
                 </div>
             </div>
@@ -80,24 +74,16 @@
                     <div class="primaryNavigation">Ajout de la communauté</div>
                 </button>
 
-                <div class="advanceNavigationComu">
-                    <button class="advanceButton">
-                        <a href="{% url 'characterCreation' %}" class="secondaryNavigationComu">Ajouter un
-                            personnages</a>
-                    </button>
+                <div class="advanceNavigation advanceNavigationComu">
+                    <a href="{% url 'characterCreation' %}" class="secondaryNavigation">Ajouter un
+                        personnages</a>
 
-                    <button class="advanceButton">
-                        <a href="{% url 'armyCreation' %}" class="secondaryNavigationComu">Ajouter une armée</a>
-                    </button>
+                    <a href="{% url 'armyCreation' %}" class="secondaryNavigation">Ajouter une armée</a>
 
-                    <button class="advanceButton">
-                        <a href="{% url 'armiesList' %}" class="secondaryNavigationComu">Armées de la communauté</a>
-                    </button>
+                    <a href="{% url 'armiesList' %}" class="secondaryNavigation">Armées de la communauté</a>
 
-                    <button class="advanceButton">
-                        <a href="{% url 'charactersList'%}" class="secondaryNavigationComu">Personnages de la
-                            communauté</a>
-                    </button>
+                    <a href="{% url 'charactersList'%}" class="secondaryNavigation">Personnages de la
+                        communauté</a>
                 </div>
             </div>
         </nav>

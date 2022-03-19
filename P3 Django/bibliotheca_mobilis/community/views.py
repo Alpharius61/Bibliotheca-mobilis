@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
-from main.models import chaosAspectVenerated
 from community.forms import characterForm, armyForm
-from community.models import charactersModel, armyModel
+from community.models import charactersModel, armyModel, chaosAspectVenerated, speciality
 from django.templatetags.static import static
 
 # Create your views here.
@@ -12,9 +11,15 @@ def characterCreationView(request):
     if request.method == 'POST':
         form = characterForm(request.POST, request.FILES)
         if form.is_valid():
-            form = form.save(commit=False)
-            form.author = request.user
-            form.save()
+            character = form.save(commit=False)
+            character.author = request.user
+            character.save()
+            for fieldSpeciality in request.POST['speciality']:
+                characterSpeciality = speciality.objects.get(
+                    id=fieldSpeciality)
+                print(characterSpeciality)
+                character.speciality.add(characterSpeciality)
+
             return redirect('/')
 
     context = {
@@ -33,21 +38,21 @@ def characterView(request, name):
 
 
 def charactersList(request):
-    imperiumList =[]
+    imperiumList = []
     chaosList = []
-    xenoList=[]
+    xenoList = []
 
     characters = charactersModel.objects.all()
     for character in characters:
-        if str(character.side) =="Imperium" :
+        if str(character.side) == "Imperium":
             imperiumList.append(character)
-        
-        elif str(character.side) =="Chaos" :
+
+        elif str(character.side) == "Chaos":
             chaosList.append(character)
-        
-        else :
+
+        else:
             xenoList.append(character)
-        
+
     context = {
         'imperiumList': imperiumList,
         'chaosList': chaosList,
@@ -55,15 +60,21 @@ def charactersList(request):
     }
     return render(request, 'community/communitiesCharacterList.html', context)
 
+
 def armyCreationView(request):
     form = armyForm()
     if request.method == 'POST':
-        form = characterForm(request.POST, request.FILES)
+        form = armyForm(request.POST, request.FILES)
         if form.is_valid():
-            form = form.save(commit=False)
-            form.author = request.user
-            form.save()
-            return redirect('/')
+            army = form.save(commit=False)
+            army.author = request.user
+            army.save()
+            for fieldSpeciality in request.POST['speciality']:
+                armySpeciality = speciality.objects.get(
+                    id=fieldSpeciality)
+                print(armySpeciality)
+                army.speciality.add(armySpeciality)
+        return redirect('/')
 
     context = {
         'form': form
@@ -73,7 +84,7 @@ def armyCreationView(request):
 
 
 def armyView(request, name):
-    army = charactersModel.objects.get(name=name)
+    army = armyModel.objects.get(name=name)
     context = {
         'army': army,
     }
@@ -81,21 +92,21 @@ def armyView(request, name):
 
 
 def armiesList(request):
-    imperiumList =[]
+    imperiumList = []
     chaosList = []
-    xenoList=[]
+    xenoList = []
 
     armies = armyModel.objects.all()
     for army in armies:
-        if str(army.side) =="Imperium" :
+        if str(army.side) == "Imperium":
             imperiumList.append(army)
-        
-        elif str(army.side) =="Chaos" :
+
+        elif str(army.side) == "Chaos":
             chaosList.append(army)
-        
-        else :
+
+        else:
             xenoList.append(army)
-        
+
     context = {
         'imperiumList': imperiumList,
         'chaosList': chaosList,

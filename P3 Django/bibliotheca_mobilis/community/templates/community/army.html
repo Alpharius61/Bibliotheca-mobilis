@@ -1,7 +1,8 @@
 {% extends 'main/_base.html' %}
 {% load static %}
 {% block extraHeader %}
-<link rel="stylesheet" href="{% static 'community/list.css' %}">
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+{% load custom_tags %}
 {% endblock extraHeader %}
 
 
@@ -17,7 +18,7 @@
         <div class='column rowTitle'>Nom</div>
         <div class='column data'>{{army.name}}</div>
     </div>
-    <div class='row dark'>
+    <div class='row'>
         <div class='column rowTitle'>Camp</div>
         <div class='column data'>{{army.side}}</div>
     </div>
@@ -26,26 +27,16 @@
         <div class='column data'>{{army.race}}</div>
     </div>
 
-    {% if army.side == "chaos" %}
-    <div class='row dark'>
+    {% if army.side|to_str == "Chaos" %}
+    <div class='row'>
         <div class='column rowTitle'>Chaos</div>
         <div class='column data'>{{army.chaosAspect}}</div>
     </div>
     {% endif %}
 
     <div class='row'>
-        <div class='column rowTitle'>Chef</div>
-        <div class='column data'>{{army.actualChef}}</div>
-    </div>
-
-    <div class='row dark'>
-        <div class='column rowTitle'>Camp</div>
-        <div class='column data'>{{army.firstChef}}</div>
-    </div>
-
-    <div class='row'>
         <div class='column rowTitle'>
-            {% if army.race != spaceMarine %}
+            {% if army.race|to_str != 'spaceMarine' %}
             Chef actuel
             {% else %}
             Maître du chapitre
@@ -54,7 +45,8 @@
         <div class='column data'>{{army.actualChef}}</div>
     </div>
 
-    <div class='row dark'>
+    {% if army.firstChef %}
+    <div class='row'>
         <div class='column rowTitle'>
             {% if army.race != spaceMarine %}
             Premier chef
@@ -64,6 +56,7 @@
         </div>
         <div class='column data'>{{army.firstChef}}</div>
     </div>
+    {% endif %}
 
     <div class='row'>
         <div class='column rowTitle'>Auteur</div>
@@ -72,16 +65,21 @@
 
 </div>
 
-<div class='containerColumn'>
-    <div class='pictures'>
-        <img class='pictures' src="{{picture_url}}" alt="Image du personnage">
-    </div>
 
-    <div class='text'>
+<div class='containerColumn'>
+    <div class='leftColumn'></div>
+
+
+    <div class='centerColumn text'>
         {{army.history}}
     </div>
-</div>
 
+    <div class="rightColumn">
+        {% if army.pictures %}
+        <img class='pictures' src="{{army.pictures.url}}" alt="Image du personnage">
+        {% endif %}
+    </div>
+</div>
 
 
 

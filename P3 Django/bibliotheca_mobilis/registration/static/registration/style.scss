@@ -1,0 +1,45 @@
+.formButton{
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+    font-size: small;
+    padding: 0.5rem;
+    background-color: rgba(255, 166, 0, 0.575);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    margin-top: 1rem; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formClass{
+    background-color: rgba(255, 166, 0, 0.575);
+    color : white;
+    column-count: 2;
+
+}
+.formControl{
+    margin-bottom: 1rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.accountClass{
+    color : white;
+    display: block;
+    padding-top: 1rem;
+}
+
+.formular{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60rem;
+}
+
+.submitButton{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%
+}

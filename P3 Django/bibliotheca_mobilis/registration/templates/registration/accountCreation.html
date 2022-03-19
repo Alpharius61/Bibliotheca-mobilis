@@ -1,4 +1,9 @@
 {% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+<link rel="stylesheet" href="{% static 'registration/style.css' %}">
+{% endblock extraHeader %}
 
 {% block title %}Inscription{% endblock title %}
 
