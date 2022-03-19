@@ -19,10 +19,3 @@ function checkCount(id) {
         document.getElementById(id).checked = false
     }
 }
-
-function updateRace(side) {
-    alert(side)
-    xhttp.open("GET", "ajax_info.txt", false);
-    xhttp.send();
-    document.getElementById("demo").innerHTML = xhttp.responseText;
-}
