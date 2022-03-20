@@ -74,6 +74,11 @@ class armyForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        self.fields['side'].widget.attrs.update(
+            {'onchange' : 'updateRaces(this.value);'}
+        )
+        
         self.fields['specialities'].widget.attrs.update(
             {'class': 'formClass specialityForm',
             'onclick' : 'checkCount(this.id);'}

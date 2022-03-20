@@ -13,7 +13,7 @@ def armyCreationView(request):
             army = form.save(commit=False)
             army.author = request.user
             army.save()
-            for fieldSpeciality in request.POST['speciality']:
+            for fieldSpeciality in request.POST['specialities']:
                 armySpeciality = speciality.objects.get(
                     id=fieldSpeciality)
                 print(armySpeciality)

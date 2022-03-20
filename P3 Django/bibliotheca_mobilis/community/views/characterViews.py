@@ -7,14 +7,12 @@ import logging
 
 def characterCreationView(request):
     form = characterForm()
-    logger = logging.getLogger('toto')
     if request.method == 'POST':
         form = characterForm(request.POST, request.FILES)
         if form.is_valid():
             character = form.save(commit=False)
             character.author = request.user
             character.save()
-            logger.info(request.POST)
             for fieldSpeciality in request.POST['specialities']:
                 characterSpeciality = speciality.objects.get(
                     id=fieldSpeciality)

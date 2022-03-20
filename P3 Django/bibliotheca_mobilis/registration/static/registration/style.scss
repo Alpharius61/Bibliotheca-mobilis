@@ -16,6 +16,10 @@
     background-color: rgba(255, 166, 0, 0.575);
     color : white;
     column-count: 2;
+    &:hover{
+        background-color: rgba(206, 134, 2, 0.8);
+        font-weight: bold;
+    }
 
 }
 .formControl{
