@@ -1,8 +1,6 @@
 from django.shortcuts import redirect, render
-from community.forms import characterForm
-from community.models import charactersModel, chaosAspectVenerated, speciality
-from django.templatetags.static import static
-import logging
+from community.forms.characterForms import characterForm
+from community.models import charactersModel, speciality
 
 
 def characterCreationView(request):

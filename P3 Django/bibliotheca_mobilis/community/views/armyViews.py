@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
-from community.forms import  armyForm
+from community.forms.armyForms import  armyForm
 from community.models import armyModel, speciality
-from django.templatetags.static import static
 
 # Create your views here.
 

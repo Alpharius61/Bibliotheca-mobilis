@@ -13,14 +13,14 @@ class speciality(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class creationSide(models.Model):
+class Side(models.Model):
     name = models.CharField(max_length=10)
     def __str__(self):
         return f"{self.name}"
 
-class creationRace(models.Model):
+class races(models.Model):
     name = models.CharField(max_length=25, validators=[])
-    side = models.ForeignKey(creationSide, on_delete=models.CASCADE)
+    side = models.ForeignKey(Side, on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.name}"
 
