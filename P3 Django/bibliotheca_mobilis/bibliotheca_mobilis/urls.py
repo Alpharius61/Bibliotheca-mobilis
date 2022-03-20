@@ -29,6 +29,7 @@ urlpatterns = [
     path('connection/', r_views.connection, name='connection'),
     path('logout/', r_views.logOut, name='logout'),
     path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
+    path('ajax/load-races/', com_views.load_races, name='ajaxLoadRaces'),
     path('character/<str:name>', com_views.characterView, name='characterView'),
     path('charactersList/', com_views.charactersList, name='charactersList'),
     path('armyCreation/', com_views.armyCreationView,name='armyCreation'),
