@@ -1,0 +1,14 @@
+
+def f(lambda ): 
+    return " ".join(title, name)
+
+def main():
+
+    titleName = lambda title:  f(name)
+      
+    for title in ["Maitre", "Docteur"]:
+        for name in ["Dupond", "Cochin"]:
+            print(titleName(title)(name))
+
+if __name__ == "__main__":
+    main()

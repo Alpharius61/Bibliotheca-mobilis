@@ -14,6 +14,7 @@ class characterForm(forms.ModelForm):
                   "chaosAspect",'specialities',"biography", "pictures"]
         labels = {
             'type': 'Type ',
+            'historicCreation': 'Création historique',
             'side': 'Camp ',
             'name': 'Nom ',
             'chaosAspect': 'Aspect du chaos vénéré ',

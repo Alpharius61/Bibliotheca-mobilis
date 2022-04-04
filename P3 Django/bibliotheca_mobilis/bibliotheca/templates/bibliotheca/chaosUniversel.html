@@ -1,0 +1,33 @@
+{% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+<link rel="stylesheet" href="{% static 'registration/style.css' %}">
+{% endblock extraHeader %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Les dimensions{% endblock title %}
+
+{% block Add %}
+
+<div class='containerColumn'>
+    <div class='leftColumn'></div>
+
+    <div class='centerColumn text'>
+        <p>
+            Nôtre univers est séparé en deux dimension plus ou moins distict :<br>
+            - la dimension réelle : telle qu’on la connaît avec ses lois physiques (gravité, temps etc) <br>
+            - Le warp, immaterium, mer des âmes et pleins d’autres noms : cette dimension est celle du Chaos, de ses
+            dieux et de ses démons. Elle est alimentée par les émotions des mortels et ne répond à aucune loi physique
+            telle que le temps ou la gravité.<br>
+            Quand les émotions d’un même type sont trop présentes, elles finissent par se rassembler et créer des
+            entités : les Dieux du Chaos ou bien renforcer celles affiliées à ces émotions.
+        </p>
+    </div>
+
+    <div class="rightColumn">
+        <img class='pictures' src="{%static 'chaosUniversel.jpg'%}" alt="Image du personnage">
+    </div>
+</div>
+<div class="articleText">
