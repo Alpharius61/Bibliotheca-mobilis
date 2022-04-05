@@ -40,7 +40,14 @@ urlpatterns = [
     path('armiesList/', com_views.armiesList, name='armiesList'),
     path('army/<str:name>', com_views.armyView, name='armyView'),
     # Bibliotheca view
-    path('bibliotheca/<str:name>', bibli_views.history, name='history'),
+    path(r'^bibliotheca/tree/$', bibli_views.showTree, name='tree'),
+    path('bibliotheca/<str:name>', bibli_views.bibliothecaArticle, name='univers'),
+    # path('bibliotheca/universe', bibli_views.bibliothecaArticle, name='univers'),
+    # path('bibliotheca/chaos', bibli_views.bibliothecaArticle, name='chaos'),
+    # path('bibliotheca/khorn', bibli_views.bibliothecaArticle, name='khorn'),
+    # path('bibliotheca/tzeentch', bibli_views.bibliothecaArticle, name='tzeentch'),
+    # path('bibliotheca/nurgle', bibli_views.bibliothecaArticle, name='nurgle'),
+    # path('bibliotheca/chaosUniversel', bibli_views.bibliothecaArticle, name='chaosUniversel'),
 
     
 ]

@@ -1,1 +1,2 @@
-from . import articleViews
+from .articleViews import *
+from .treeView import *
