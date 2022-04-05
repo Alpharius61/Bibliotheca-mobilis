@@ -18,6 +18,7 @@ from django.urls import path
 from main import views
 from registration import views as r_views
 from community import views as com_views
+from bibliotheca import views as bibli_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,16 +26,22 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    # User
     path('accountCreation/', r_views.accountCreation, name='accountCreation'),
     path('connection/', r_views.connection, name='connection'),
     path('logout/', r_views.logOut, name='logout'),
-    path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
+    # Creation content
     path('ajax/load-races/', com_views.load_races, name='ajaxLoadRaces'),
-    path('character/<str:name>', com_views.characterView, name='characterView'),
-    path('charactersList/', com_views.charactersList, name='charactersList'),
+    path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
     path('armyCreation/', com_views.armyCreationView,name='armyCreation'),
-    path('army/<str:name>', com_views.armyView, name='armyView'),
+    # Creation view (list and element)
+    path('charactersList/', com_views.charactersList, name='charactersList'),
+    path('character/<str:name>', com_views.characterView, name='characterView'),
     path('armiesList/', com_views.armiesList, name='armiesList'),
+    path('army/<str:name>', com_views.armyView, name='armyView'),
+    # Bibliotheca view
+    path('bibliotheca/<str:name>', bibli_views.history, name='history'),
+
     
 ]
 

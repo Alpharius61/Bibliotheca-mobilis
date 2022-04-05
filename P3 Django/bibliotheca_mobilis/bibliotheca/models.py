@@ -5,8 +5,8 @@ from django.forms import CharField
 
 class histoiry (models.Model):
 
-    parents = models.ForeignKey('self', on_delete = models.CASCADE,null=True)
-    article = models.TextField(max_length=20000)
+    parents = models.ForeignKey('self', on_delete = models.CASCADE,null=True, blank=True)
+    content = models.TextField(max_length=100)
     title = models.CharField(max_length= 70)
 
     def __str__(self):
