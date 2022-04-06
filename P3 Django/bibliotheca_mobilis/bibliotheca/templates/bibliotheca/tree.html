@@ -3,6 +3,7 @@
 {% block extraHeader %}
 <link rel="stylesheet" href="{% static 'community/style.css' %}">
 <link rel="stylesheet" href="{% static 'registration/style.css' %}">
+<link rel="stylesheet" href="{% static 'bibliotheca/style.css' %}">
 {% endblock extraHeader %}
 
 {% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
@@ -13,7 +14,7 @@
 
 {% load mptt_tags %}
 <ul>
-    {% recursetree history %}
+    {% recursetree articles %}
     <li>
         {{ node.title }}
         {% if not node.is_leaf_node %}
