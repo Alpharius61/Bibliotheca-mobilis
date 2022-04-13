@@ -5,9 +5,11 @@ import logging
 def showTree(request):
     logger = logging.getLogger('toto')
     rows = history.objects.all()
+
     logger.debug(rows)
     context = {
-        'articles' : rows
+        'articles' : rows,
+        'init' : rows[0].contentURL
     }
 
     return render(request,'bibliotheca/tree.html', context)

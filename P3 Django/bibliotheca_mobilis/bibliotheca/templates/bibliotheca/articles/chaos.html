@@ -1,35 +1,16 @@
-{% extends 'main/_base.html' %}
 {% load static %}
-{% block extraHeader %}
-<link rel="stylesheet" href="{% static 'community/style.css' %}">
-<link rel="stylesheet" href="{% static 'registration/style.css' %}">
-{% endblock extraHeader %}
-
-{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
-
-{% block title %}Les dimensions{% endblock title %}
-
-{% block Add %}
-
-<div class='containerColumn'>
-    <div class='leftColumn'></div>
-
-    <div class='centerColumn text'>
+<div class='itemArticle text'>
         <p>
-            Cette manifestation d'énergie pur est la nature même du warp.Le Chaos est une force corruptrice et
-            destructrice et ceux enver quiconque, y compris lui même. Il est en permanance en mouvement et si cette
-            energie entre en contact avec un élément ce dernier sera irrémédiablement altérer, muté, soit de fàçon à
-            refléter physiquement ce qu'il est un l'intérieur soit celon l'humeur de l'entité à l'origine de
-            celle-ci.<br>
-            Il est majoritairement représenté par quatre dieux (les plus puissantes entitées le composant), soit de
-            façon
-            individuelle, soit de façon universelle.
+                Cette manifestation d'énergie pur est la nature même du warp.Le Chaos est une force corruptrice et
+                destructrice et ceux enver quiconque, y compris lui même. Il est en permanance en mouvement et si cette
+                energie entre en contact avec un élément ce dernier sera irrémédiablement altérer, muté, soit de fàçon à
+                refléter physiquement ce qu'il est un l'intérieur soit celon l'humeur de l'entité à l'origine de
+                celle-ci.<br>
+                Il est majoritairement représenté par quatre dieux (les plus puissantes entitées le composant), soit de
+                façon
+                individuelle, soit de façon universelle.
         </p>
-    </div>
-
-    <div class="rightColumn">
-        <img class='pictures' src="{%static 'warp.jpg'%}">
-    </div>
 </div>
-<div class="articleText">
-    {% endblock Add %}
+<div class="itemPictures">
+        <img class='pictures' src="{%static 'bibliotheca/pictures/warp.jpg'%}">
+</div>

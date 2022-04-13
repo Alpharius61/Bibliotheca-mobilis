@@ -1,17 +1,41 @@
-ul li::marker {
-    content : "X ";
-    color: rgba(0, 249, 21, 0.9);
+.containerHistory {
+	display: flex;
+	padding-top: 1rem;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
-ul {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: large ;
-    color: rgba(255, 166, 0, 0.9);
+.itemTreeMenu {
+	order : 1;
+	align-self: flex-start;
+	padding: 10px;
+	flex: 1 1 20%;
 }
 
-li {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: large ;
-    color: rgba(255, 0, 0, 0.9);
+.itemArticle {
+	order : 2;
+	padding: 10px 10px 0px 10px;
+	flex: 3 3 50%
+}
+.itemPictures {
+	order : 3;
+	padding: 10px; 
+	flex: 1 2 30%;
+}
 
+.itemTreeMenu a {
+	text-decoration: none;
+	color: rgba(255, 166, 0, 0.9);
+	font-size: large;
+}
+.itemTreeMenu:hover {
+	color: white;
+}
+
+.itemTreeMenu ul,li {
+	list-style-type: none;
+	padding: revert;
+}
+.itemTreeMenu>ul {
+	padding-left: 0px;
 }
