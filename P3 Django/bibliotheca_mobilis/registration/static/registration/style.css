@@ -19,6 +19,11 @@
           column-count: 2;
 }
 
+.formClass:hover {
+  background-color: rgba(206, 134, 2, 0.8);
+  font-weight: bold;
+}
+
 .formControl {
   margin-bottom: 1rem;
   width: 100%;

@@ -1,0 +1,40 @@
+{% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+<link rel="stylesheet" href="{% static 'registration/style.css' %}">
+<link rel="stylesheet" href="{% static 'bibliotheca/style.css' %}">
+<link rel="stylesheet" href="{% static 'bibliotheca/style.css' %}">
+<script src="{% static 'bibliotheca/article.js' %}"></script>
+{% endblock extraHeader %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Universe{% endblock title %}
+
+{% block Add %}
+
+{% load mptt_tags %}
+
+<div id='historyContainer' class='containerHistory'>
+    <div class='itemTreeMenu'>
+        <ul>
+            {% recursetree articles %}
+            <li>
+                <a href="javascript:loadArticle('articles/{{node.contentURL}}')">{{node.title}}</a>
+                {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+                {% endif %}
+            </li>
+            {% endrecursetree %}
+        </ul>
+    </div>
+    <script>
+        loadArticle('articles/{{init}}')
+    </script>
+</div>
+
+
+{% endblock Add %}

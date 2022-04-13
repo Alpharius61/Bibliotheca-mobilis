@@ -15,7 +15,8 @@
 <div class='textPosition'>
     {% if user.is_authenticated%}
 
-    <form action="" method='post' class='formular' enctype="multipart/form-data">
+    <form id="characterCreationForm" action="" method='post' class='formular' enctype="multipart/form-data"
+        data-races-url="{% url 'ajaxLoadRaces' %}" novalidate>
         {% csrf_token %}
 
         {% comment %} {{form.as_p}} {% endcomment %}
