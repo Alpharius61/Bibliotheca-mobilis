@@ -110,6 +110,7 @@ div.row:nth-child(even) {
 .centerColumn {
   margin: 0;
   padding-top: 2rem;
+  width: 50%;
 }
 
 .rightColumn {
