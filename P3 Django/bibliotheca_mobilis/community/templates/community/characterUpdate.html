@@ -1,0 +1,42 @@
+{% extends 'main/_base.html' %}
+{% load static %}
+{% block extraHeader %}
+<link rel="stylesheet" href="{% static 'community/style.css' %}">
+<link rel="stylesheet" href="{% static 'registration/style.css' %}">
+<script src="{% static 'community/community.js' %}"></script>
+
+{% endblock extraHeader %}
+
+{% block pageTitle %}Warhammer 40.000 - Bibliotheca Mobilis{% endblock pageTitle %}
+
+{% block title %}Mise à jour Personnage{% endblock title %}
+
+{% block Add %}
+
+<div class='textPosition'>
+
+    <form id="characterCreationForm" action="" method='post' class='formular' enctype="multipart/form-data"
+        data-races-url="{% url 'ajaxLoadRaces' %}" novalidate>
+        {% csrf_token %}
+
+        {%for field in form%}
+        {% comment %} field.name = nom label (pseudo,email etc) {% endcomment %}
+        <div class="error">{{field.errors}}</div>
+        <div class="form__control">
+            <label for="{{field.name}}" class="accountClass">{{field.label}}</label>
+            {{field}}
+        </div>
+
+        {% endfor %}
+
+        <div>
+            <button id='update' class='formButton' type="submit" value='update'>Modifier</button>
+            <input name='delete' class='formButton' type="submit" value='Supprimer' />
+            <a class='formButton' href={% url 'index'%}> Retour</a>
+        </div>
+
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+    </form>
+</div>
+{% endblock Add %}

@@ -81,6 +81,10 @@ div.row:nth-child(even){
     text-align: center; 
 }
 
+#id_biography{
+    height: 20em;
+    width: 68em
+}
 .pictures{
     padding-top: 2rem;
     margin-right: auto ;
@@ -102,10 +106,22 @@ div.row:nth-child(even){
 .centerColumn{
     margin: 0;
     padding-top: 2rem;
+    width: 50%;
 }
 
 .rightColumn{
     width : 25%;
     margin : 0;
     padding : 0;
+}
+
+#updateButton{
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1150px){
+    #id_biography{
+        height: 20em;
+        width: 34em
+    }
 }

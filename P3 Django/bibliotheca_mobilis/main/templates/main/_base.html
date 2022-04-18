@@ -29,10 +29,6 @@
                             <a href={% url 'logout'%} class='userConnection'> Se déconnecter</a>
                         </li>
 
-                        <li class='userConnection'>
-                            |
-                        </li>
-
                         <li>
                             <a href class='userConnection'>{{user.username}}</a>
                         </li>
@@ -59,7 +55,7 @@
                     <div class="primaryNavigation">Bibliothèque</div>
                 </button>
                 <div class="advanceNavigation advanceNavigationLibrary">
-                    <a href="history" class="secondaryNavigation">Histoire</a>
+                    <a href="{% url 'tree' %}" class="secondaryNavigation">Histoire</a>
 
                     <a href="armies" class="secondaryNavigation">Armées</a>
 

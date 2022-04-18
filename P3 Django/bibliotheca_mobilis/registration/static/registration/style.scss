@@ -47,3 +47,11 @@
     margin-right: auto;
     width: 60%
 }
+
+@media screen and (max-width: 1150px) {
+    #id_specialities{
+        column-count: 1;
+        width : 35%
+    }
+    
+}

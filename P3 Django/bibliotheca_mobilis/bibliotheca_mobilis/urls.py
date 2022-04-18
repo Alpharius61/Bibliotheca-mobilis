@@ -26,29 +26,28 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+
     # User
     path('accountCreation/', r_views.accountCreation, name='accountCreation'),
     path('connection/', r_views.connection, name='connection'),
     path('logout/', r_views.logOut, name='logout'),
+
     # Creation content
     path('ajax/load-races/', com_views.load_races, name='ajaxLoadRaces'),
     path('characterCreation/', com_views.characterCreationView,name='characterCreation'),
     path('armyCreation/', com_views.armyCreationView,name='armyCreation'),
+   
     # Creation view (list and element)
     path('charactersList/', com_views.charactersList, name='charactersList'),
     path('character/<str:name>', com_views.characterView, name='characterView'),
+    path('character/update/<int:id>', com_views.characterUpdate, name='characterUpdate'),
     path('armiesList/', com_views.armiesList, name='armiesList'),
     path('army/<str:name>', com_views.armyView, name='armyView'),
+
     # Bibliotheca view
+
     path('bibliotheca/tree/', bibli_views.showTree, name='tree'),
     path('bibliotheca/tree/articles/<str:name>', bibli_views.bibliothecaArticle, name='univers'),
-    # path('bibliotheca/universe', bibli_views.bibliothecaArticle, name='univers'),
-    # path('bibliotheca/chaos', bibli_views.bibliothecaArticle, name='chaos'),
-    # path('bibliotheca/khorn', bibli_views.bibliothecaArticle, name='khorn'),
-    # path('bibliotheca/tzeentch', bibli_views.bibliothecaArticle, name='tzeentch'),
-    # path('bibliotheca/nurgle', bibli_views.bibliothecaArticle, name='nurgle'),
-    # path('bibliotheca/chaosUniversel', bibli_views.bibliothecaArticle, name='chaosUniversel'),
-
     
 ]
 

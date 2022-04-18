@@ -48,4 +48,12 @@
   margin-right: auto;
   width: 60%;
 }
+
+@media screen and (max-width: 1150px) {
+  #id_specialities {
+    -webkit-column-count: 1;
+            column-count: 1;
+    width: 35%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
