@@ -9,7 +9,7 @@ class charactersModel(models.Model):
     name = models.CharField(max_length=50)
     biography = models.TextField(max_length=10000)
     speciality = models.ManyToManyField(speciality)
-    side = models.ForeignKey(Side,on_delete=models.CASCADE)
+    side = models.ForeignKey(side,on_delete=models.CASCADE)
     race = models.ForeignKey(races, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     chaosAspect = models.ForeignKey(chaosAspectVenerated, on_delete=models.CASCADE,null=True, blank=True)

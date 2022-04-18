@@ -1,8 +1,6 @@
 from django import forms
 from community.models import armyModel, charactersModel, armyModel, speciality , races
-
- 
-
+import logging
 
 class characterForm(forms.ModelForm):
     specialities = forms.ModelMultipleChoiceField(label = 'Spécialité(s)',
@@ -22,6 +20,7 @@ class characterForm(forms.ModelForm):
             'pictures': 'Image',
         }
 
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -34,9 +33,6 @@ class characterForm(forms.ModelForm):
         self.fields['side'].widget.attrs.update(
             {'onchange' : 'updateRaces(this.value);'}
         )
-
-        self.fields['biography'].widget.attrs.update(
-            {'cols': '68'})
         
         for field in self.fields:
             self.fields[field].widget.attrs.update({
@@ -50,4 +46,4 @@ class characterForm(forms.ModelForm):
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty race queryset
         elif self.instance.pk:
-            self.fields['race'].queryset = self.instance.side.race_set.order_by('name')
+             self.fields['race'].queryset = races.objects.filter(side_id=self.instance.side_id).order_by('name')

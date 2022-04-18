@@ -178,7 +178,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-top: 5rem;
-  width: 50%;
+  width: 75%;
 }
 
 .text {
@@ -193,5 +193,47 @@ body {
 
 .beginning:hover {
   color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  .textPosition {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5rem;
+    width: 75%;
+  }
+  .topPictures {
+    height: 25vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+  }
+  .containerContent {
+    margin-left: auto;
+    margin-right: auto;
+    background: url("./Font-Space.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    height: auto;
+    min-height: 2000px;
+  }
+  .connection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    list-style-type: none;
+    margin-right: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
